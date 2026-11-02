@@ -63,7 +63,6 @@ wp_raise_memory_limit( 'cron' );
  */
 function _get_cron_lock() {
 	global $wpdb;
-
 	$value = 0;
 	if ( wp_using_ext_object_cache() ) {
 		/*
