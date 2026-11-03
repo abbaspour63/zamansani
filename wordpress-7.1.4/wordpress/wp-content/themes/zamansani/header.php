@@ -208,20 +208,6 @@
                 </nav>
 
 
-                <!-- Mobile Menu Button -->
-                <!-- <button id="mobile-menu-button"
-                    type="button"
-                    aria-label="باز کردن منو"
-                    aria-expanded="false"
-                    class="md:hidden p-2 rounded-lg hover:bg-green-50">
-
-                    <svg class="w-7 h-7 text-[#468432]"
-                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
-
-                </button> -->
 
 
                 <button
