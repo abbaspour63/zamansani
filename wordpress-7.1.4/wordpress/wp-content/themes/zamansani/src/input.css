@@ -1,0 +1,124 @@
+
+@import "tailwindcss";
+
+/* Persian and Arabic font */
+@font-face {
+    font-family: "Vazirmatn";
+    src: url("../fonts/Vazirmatn[wght].woff2") format("woff2");
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* English font */
+@font-face {
+    font-family: "Inter";
+    src: url("../fonts/InterVariable.woff2") format("woff2");
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@theme {
+    --color-primary: #468432;
+    --color-dark: #3D3D3D;
+    --color-white: #FFFFFF;
+
+    --font-sans: "Vazirmatn", sans-serif;
+    --font-latin: "Inter", sans-serif;
+}
+
+/* Default font for the entire website */
+body,
+button,
+input,
+textarea,
+select {
+    font-family: "Vazirmatn", sans-serif;
+}
+
+/* English pages */
+html:lang(en) body,
+html:lang(en) button,
+html:lang(en) input,
+html:lang(en) textarea,
+html:lang(en) select {
+font-family: "Inter", sans-serif;
+}
+.custom-logo {
+    width: 150px;
+    height: auto;
+    object-fit: contain;
+}
+
+
+/* Persian and Arabic */
+html:lang(fa),
+html:lang(ar) {
+    direction: rtl;
+}
+
+html:lang(fa) body,
+html:lang(ar) body {
+    font-family: "Vazirmatn", sans-serif;
+    text-align: right;
+}
+
+/* English */
+html:lang(en) {
+    direction: ltr;
+}
+
+html:lang(en) body {
+    font-family: "Inter", sans-serif;
+    text-align: left;
+}
+
+/* Form elements */
+html:lang(fa) input,
+html:lang(fa) textarea,
+html:lang(ar) input,
+html:lang(ar) textarea {
+    direction: rtl;
+}
+
+html:lang(en) input,
+html:lang(en) textarea {
+    direction: ltr;
+}
+.custom-logo-link {
+    display: flex;
+    align-items: center;
+}
+
+.custom-logo {
+    width: 165px;
+    height: 65px;
+    object-fit: contain;
+}
+
+@keyframes zamansani-ticker {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.ticker-wrapper {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 280px;
+}
+
+.ticker-text {
+    display: inline-block;
+    animation: zamansani-ticker 12s linear infinite;
+    color: #ffffff;
+}
+
+.ticker-text:hover {
+    animation-play-state: paused;
+}
