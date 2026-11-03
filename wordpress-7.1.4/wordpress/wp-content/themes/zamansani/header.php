@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?> dir="rtl">
+
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -188,28 +189,7 @@
                         </div>
                     </div>
 
-                    <!-- <a href="<?php echo esc_url(home_url('/about/')); ?>"
-                        class="hover:text-[#468432] transition">
-                        درباره ما
-                    </a>
-
-                    <a href="<?php echo esc_url(home_url('/blog/')); ?>"
-                        class="hover:text-[#468432] transition">
-                       تماس با ما
-                    </a>
-
-                    <a href="<?php echo esc_url(home_url('/contact/')); ?>"
-                        class="hover:text-[#468432] transition">
-                     استخدام
-                    </a> -->
-
-
-
                 </nav>
-
-
-
-
                 <button
                     id="mobile-menu-button"
                     type="button"
@@ -231,27 +211,63 @@
         </div>
     </header>
     <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
-    <nav class="flex flex-col p-5 gap-4">
 
-        <a href="<?php echo esc_url(home_url('/')); ?>">
-            خانه
-        </a>
+        <nav class="max-w-7xl mx-auto px-6 py-4">
 
-        <a href="<?php echo esc_url(home_url('/services/')); ?>">
-            خدمات
-        </a>
+            <?php
+            wp_nav_menu([
+                'theme_location' => 'primary',
+                'container'      => false,
+                'menu_class'     => 'flex flex-col gap-3 text-[#3D3D3D]',
+                'fallback_cb'    => 'wp_page_menu',
+                'depth'          => 2,
+            ]);
+            ?>
 
-        <a href="<?php echo esc_url(home_url('/portfolio/')); ?>">
-           
-        </a>
+        </nav>
 
-        <a href="<?php echo esc_url(home_url('/about/')); ?>">
-            درباره ما
-        </a>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
 
-        <a href="<?php echo esc_url(home_url('/contact/')); ?>">
-            تماس با ما
-        </a>
+            const menuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
 
-    </nav>
-</div>
+            if (!menuButton || !mobileMenu) return;
+
+            menuButton.addEventListener('click', function() {
+
+                const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
+
+                menuButton.setAttribute('aria-expanded', String(!isOpen));
+
+                mobileMenu.classList.toggle('hidden', isOpen);
+
+                menuButton.textContent = isOpen ? '☰' : '✕';
+
+            });
+
+            // Close menu after clicking a link
+            mobileMenu.querySelectorAll('a').forEach(function(link) {
+
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.add('hidden');
+                    menuButton.setAttribute('aria-expanded', 'false');
+                    menuButton.textContent = '☰';
+                });
+
+            });
+
+            // Close menu with Escape key
+            document.addEventListener('keydown', function(event) {
+
+                if (event.key === 'Escape') {
+                    mobileMenu.classList.add('hidden');
+                    menuButton.setAttribute('aria-expanded', 'false');
+                    menuButton.textContent = '☰';
+                }
+
+            });
+
+        });
+    </script>
