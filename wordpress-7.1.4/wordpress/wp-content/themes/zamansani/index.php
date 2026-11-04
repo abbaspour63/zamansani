@@ -1,4 +1,3 @@
-
 <?php get_header(); ?>
 
 <main class="max-w-7xl mx-auto px-6 py-12">
@@ -29,7 +28,10 @@
         <p>محتوایی وجود ندارد.</p>
 
     <?php endif; ?>
+    
 
 </main>
+
+
 
 <?php get_footer(); ?>

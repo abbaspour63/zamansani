@@ -1,7 +1,6 @@
-
 <section dir="rtl"
     class="relative overflow-hidden bg-[#F8F7F0] py-16 lg:py-24">
-
+       
     <!-- Background decoration -->
     <div class="absolute -top-40 -left-40 w-96 h-96 bg-green-200/40 rounded-full blur-3xl"></div>
     <div class="absolute bottom-0 right-0 w-96 h-96 bg-lime-100/50 rounded-full blur-3xl"></div>

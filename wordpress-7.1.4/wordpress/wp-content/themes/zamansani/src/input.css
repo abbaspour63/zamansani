@@ -282,3 +282,792 @@ html:lang(en) textarea {
         animation: none;
     }
 }
+
+
+/* =================================
+   ZamanSani 3D Service Cards
+================================= */
+
+.service-card {
+    display: block;
+    perspective: 1200px;
+    min-width: 0;
+}
+
+.service-card-inner {
+    position: relative;
+    min-height: 340px;
+    padding: 26px;
+    overflow: hidden;
+    isolation: isolate;
+
+    background: linear-gradient(
+        145deg,
+        #FFFFFF 0%,
+        #F5F7F1 100%
+    );
+
+    border: 1px solid #E7EBE2;
+    border-radius: 28px;
+
+    transform-style: preserve-3d;
+
+    box-shadow:
+        0 12px 25px rgba(31, 57, 29, 0.05),
+        inset 0 1px 0 rgba(255,255,255,0.9);
+
+    transition:
+        transform 0.55s cubic-bezier(.2,.8,.2,1),
+        box-shadow 0.55s ease,
+        border-color 0.4s ease;
+}
+
+.service-card-inner::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: -80px;
+    left: -80px;
+
+    width: 220px;
+    height: 220px;
+
+    background: radial-gradient(
+        circle,
+        rgba(70,132,50,0.14),
+        transparent 70%
+    );
+
+    transition: transform .6s ease;
+}
+
+.service-card:hover .service-card-inner {
+    transform:
+        rotateX(5deg)
+        rotateY(-5deg)
+        translateY(-10px);
+
+    border-color: rgba(70,132,50,0.35);
+
+    box-shadow:
+        0 30px 55px rgba(31,57,29,0.13),
+        0 10px 20px rgba(70,132,50,0.08);
+}
+
+.service-card:hover .service-card-inner::before {
+    transform: scale(1.5);
+}
+
+.service-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    transform: translateZ(20px);
+}
+
+.service-number {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #A1A99C;
+}
+
+.service-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+
+    background: #F0F3EC;
+    color: #468432;
+
+    transition: all .35s ease;
+}
+
+.service-card:hover .service-arrow {
+    background: #468432;
+    color: white;
+    transform: rotate(-45deg);
+}
+
+.service-icon {
+    width: 68px;
+    height: 68px;
+    margin-top: 28px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(145deg,#5D9B48,#3C772D);
+    color: white;
+
+    border-radius: 21px;
+
+    box-shadow:
+        0 12px 20px rgba(70,132,50,.25),
+        inset 0 1px 2px rgba(255,255,255,.4);
+
+    transform: translateZ(35px);
+    transition: transform .45s ease;
+}
+
+.service-icon svg {
+    width: 31px;
+    height: 31px;
+}
+
+.service-card:hover .service-icon {
+    transform: translateZ(55px) rotate(-5deg) scale(1.06);
+}
+
+.service-content {
+    position: relative;
+    z-index: 2;
+    margin-top: 25px;
+    transform: translateZ(25px);
+}
+
+.service-content h3 {
+    font-size: 19px;
+    font-weight: 900;
+    color: #293127;
+}
+
+.service-content p {
+    margin-top: 12px;
+    font-size: 13px;
+    line-height: 2.2;
+    color: #858D81;
+}
+
+.service-card-bottom {
+    position: absolute;
+    z-index: 2;
+    bottom: 25px;
+    right: 26px;
+    left: 26px;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    font-size: 12px;
+    font-weight: 800;
+    color: #468432;
+
+    transform: translateZ(25px);
+}
+
+.service-line {
+    width: 35px;
+    height: 1px;
+    background: #9BB991;
+    transition: width .4s ease;
+}
+
+.service-card:hover .service-line {
+    width: 65px;
+}
+
+.service-decoration {
+    position: absolute;
+    z-index: -1;
+    left: -55px;
+    bottom: -85px;
+
+    width: 180px;
+    height: 180px;
+
+    border: 1px solid rgba(70,132,50,.12);
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 0 20px rgba(70,132,50,.025),
+        0 0 0 40px rgba(70,132,50,.02);
+
+    transition: transform .6s ease;
+}
+
+.service-card:hover .service-decoration {
+    transform: scale(1.2) translateZ(-10px);
+}
+
+.service-card:focus-visible {
+    outline: 3px solid #468432;
+    outline-offset: 5px;
+}
+
+@media (hover: none) {
+    .service-card:hover .service-card-inner {
+        transform: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .service-card-inner,
+    .service-icon,
+    .service-arrow,
+    .service-line,
+    .service-decoration {
+        transition: none;
+    }
+}
+
+
+.service-card {
+    display: block;
+    min-width: 0;
+    perspective: 1200px;
+}
+
+.service-card-inner {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    min-height: 355px;
+    padding: 27px;
+    border-radius: 27px;
+    border: 1px solid #E5E9E0;
+    background: linear-gradient(145deg, #fff, #F6F8F3);
+    box-shadow: 0 12px 28px rgba(40,65,35,.06);
+    transform-style: preserve-3d;
+    transition: transform .5s ease, box-shadow .5s ease;
+}
+
+.service-card-inner::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 220px;
+    height: 220px;
+    top: -100px;
+    left: -100px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(70,132,50,.16), transparent 70%);
+    transition: transform .5s ease;
+}
+
+.service-card:hover .service-card-inner {
+    transform: rotateX(5deg) rotateY(-5deg) translateY(-10px);
+    box-shadow: 0 30px 55px rgba(30,60,25,.14);
+}
+
+.service-card:hover .service-card-inner::before {
+    transform: scale(1.6);
+}
+
+.service-arrow {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #EEF2E9;
+    color: #468432;
+    transition: .35s ease;
+}
+
+.service-card:hover .service-arrow {
+    background: #468432;
+    color: white;
+    transform: rotate(-45deg);
+}
+
+.service-icon {
+    width: 68px;
+    height: 68px;
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    color: white;
+    background: linear-gradient(145deg, #68A653, #356C29);
+    box-shadow: 0 12px 22px rgba(70,132,50,.25);
+    transform: translateZ(35px);
+    transition: transform .4s ease;
+}
+
+.service-icon svg {
+    width: 32px;
+    height: 32px;
+}
+
+.service-card:hover .service-icon {
+    transform: translateZ(55px) scale(1.08);
+}
+
+.service-card-bottom {
+    position: absolute;
+    bottom: 25px;
+    right: 27px;
+    left: 27px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 12px;
+    font-weight: 800;
+    color: #468432;
+    transform: translateZ(25px);
+}
+
+.service-line {
+    height: 1px;
+    width: 30px;
+    background: #8EAD82;
+    transition: width .4s ease;
+}
+
+.service-card:hover .service-line {
+    width: 65px;
+}
+
+.service-decoration {
+    position: absolute;
+    z-index: -1;
+    bottom: -80px;
+    left: -65px;
+    width: 180px;
+    height: 180px;
+    border: 1px solid rgba(70,132,50,.13);
+    border-radius: 50%;
+    box-shadow: 0 0 0 20px rgba(70,132,50,.025),
+                0 0 0 40px rgba(70,132,50,.02);
+}
+
+@media (hover: none) {
+    .service-card:hover .service-card-inner {
+        transform: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .service-card-inner,
+    .service-icon,
+    .service-arrow {
+        transition: none;
+    }
+}
+
+/* @layer components {
+
+    .zs-cultural-hero {
+        background: linear-gradient(
+            135deg,
+            #fbfaf4 0%,
+            #f2f5e9 50%,
+            #ffffff 100%
+        );
+        color: #30352d;
+        isolation: isolate;
+    }
+
+    .zs-hero-bg {
+        position: absolute;
+        inset: 0;
+        background-image:
+            radial-gradient(
+                circle at 15% 20%,
+                rgba(70,132,50,.10),
+                transparent 35%
+            ),
+            radial-gradient(
+                circle at 90% 80%,
+                rgba(217,210,139,.18),
+                transparent 30%
+            );
+        z-index: -1;
+    }
+
+    .zs-hero-glow {
+        position: absolute;
+        width: 320px;
+        height: 320px;
+        border-radius: 50%;
+        filter: blur(100px);
+        opacity: .3;
+        pointer-events: none;
+        z-index: -1;
+    }
+
+    .zs-glow-one {
+        background: #8bbd70;
+        top: 10%;
+        left: 5%;
+    }
+
+    .zs-glow-two {
+        background: #d9d28b;
+        bottom: 5%;
+        right: 10%;
+    }
+
+    .zs-cultural-visual {
+        min-height: 450px;
+        animation: zs-float 6s ease-in-out infinite;
+    }
+
+    .zs-cultural-image {
+        position: relative;
+        height: 520px;
+        overflow: hidden;
+        border-radius: 40px 120px 40px 120px;
+        border: 1px solid rgba(70,132,50,.15);
+        box-shadow: 0 35px 80px rgba(40,70,30,.15);
+    }
+
+    .zs-cultural-image img {
+        transition: transform 1s ease;
+    }
+
+    .zs-cultural-image:hover img {
+        transform: scale(1.04);
+    }
+
+    .zs-visual-label {
+        position: absolute;
+        bottom: 25px;
+        left: 25px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 22px;
+        background: rgba(255,255,255,.85);
+        backdrop-filter: blur(12px);
+        border-radius: 50px;
+        font-weight: 700;
+    }
+
+    .zs-label-dot {
+        width: 9px;
+        height: 9px;
+        background: #468432;
+        border-radius: 50%;
+    }
+
+    .zs-floating-card {
+        position: absolute;
+        right: -25px;
+        bottom: 80px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding: 20px 25px;
+        border-radius: 20px;
+        background: rgba(255,255,255,.95);
+        box-shadow: 0 20px 50px rgba(30,50,20,.12);
+    }
+
+    .zs-floating-card strong {
+        display: block;
+        font-size: 14px;
+    }
+
+    .zs-floating-card p {
+        margin-top: 5px;
+        font-size: 12px;
+        color: #777;
+    }
+
+    .zs-floating-icon {
+        color: #468432;
+        font-size: 30px;
+    }
+
+    .zs-hero-eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        color: #468432;
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: .5px;
+        margin-bottom: 25px;
+    }
+
+    .zs-hero-eyebrow span {
+        width: 35px;
+        height: 2px;
+        background: #468432;
+    }
+
+    .zs-cultural-title {
+        font-size: clamp(36px, 5vw, 66px);
+        font-weight: 900;
+        line-height: 1.5;
+        letter-spacing: -2px;
+    }
+
+    .zs-cultural-title span {
+        color: #468432;
+    }
+
+    .zs-cultural-description {
+        max-width: 540px;
+        margin-top: 25px;
+        font-size: 17px;
+        line-height: 2.2;
+        color: #59634f;
+    }
+
+    .zs-cultural-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 28px;
+    }
+
+    .zs-cultural-tags span {
+        padding: 10px 16px;
+        border: 1px solid rgba(70,132,50,.2);
+        border-radius: 50px;
+        font-size: 12px;
+        color: #468432;
+        background: rgba(255,255,255,.5);
+    }
+
+    .zs-cultural-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-top: 35px;
+    }
+
+    .zs-btn-primary,
+    .zs-btn-secondary {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        padding: 16px 28px;
+        border-radius: 50px;
+        font-size: 14px;
+        font-weight: 700;
+        transition: all .3s ease;
+    }
+
+    .zs-btn-primary {
+        background: #468432;
+        color: white;
+    }
+
+    .zs-btn-primary:hover {
+        background: #315e23;
+        transform: translateY(-3px);
+    }
+
+    .zs-btn-secondary {
+        border: 1px solid rgba(70,132,50,.3);
+        color: #468432;
+        background: white;
+    }
+
+    .zs-btn-secondary:hover {
+        background: #f0f5eb;
+    }
+
+    .zs-cultural-footer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 25px;
+        padding: 25px;
+        color: #718064;
+        font-size: 12px;
+        border-top: 1px solid rgba(70,132,50,.1);
+    }
+
+    .zs-cultural-footer div {
+        width: 100px;
+        height: 1px;
+        background: #c8d5bd;
+    }
+
+    @keyframes zs-float {
+        0%, 100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-12px);
+        }
+    }
+
+    @media (max-width: 768px) {
+
+        .zs-cultural-visual {
+            min-height: 300px;
+        }
+
+        .zs-cultural-image {
+            height: 340px;
+            border-radius: 25px 70px 25px 70px;
+        }
+
+        .zs-floating-card {
+            right: 10px;
+            bottom: 30px;
+            padding: 15px;
+        }
+
+        .zs-cultural-title {
+            letter-spacing: -1px;
+        }
+
+        .zs-cultural-description {
+            font-size: 15px;
+        }
+
+        .zs-cultural-footer {
+            gap: 10px;
+            font-size: 10px;
+        }
+
+        .zs-cultural-footer div {
+            width: 40px;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .zs-cultural-visual {
+            animation: none;
+        }
+    }
+
+} */
+
+
+
+/* ZamanSani Iran-Iraq Hero */
+
+.hero-iran-iraq {
+    position: relative;
+    min-height: 720px;
+    overflow: hidden;
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.04),
+            rgba(255,255,255,.12)
+        ),
+        url('../images/iran-iraq-culture');
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.hero-iran-iraq__container {
+    max-width: 1280px;
+    margin: auto;
+    padding: 120px 24px;
+}
+
+.hero-iran-iraq__content {
+    max-width: 650px;
+    margin-right: auto;
+    text-align: right;
+}
+
+.hero-iran-iraq__badge {
+    display: inline-block;
+    padding: 10px 22px;
+    margin-bottom: 24px;
+    color: #468432;
+    background: rgba(255,255,255,.85);
+    border: 1px solid #468432;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.hero-iran-iraq__content h1 {
+    font-size: clamp(34px, 5vw, 64px);
+    font-weight: 900;
+    line-height: 1.7;
+    color: #3D3D3D;
+}
+
+.hero-iran-iraq__content h1 span {
+    display: block;
+    color: #468432;
+}
+
+.hero-iran-iraq__content p {
+    max-width: 580px;
+    margin-top: 24px;
+    font-size: 18px;
+    line-height: 2;
+    color: #3D3D3D;
+}
+
+.hero-iran-iraq__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 32px;
+}
+
+.hero-iran-iraq__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-weight: 700;
+    transition: .3s ease;
+}
+
+.hero-iran-iraq__btn--primary {
+    color: #fff;
+    background: #468432;
+}
+
+.hero-iran-iraq__btn--primary:hover {
+    background: #315f24;
+    transform: translateY(-3px);
+}
+
+.hero-iran-iraq__btn--outline {
+    color: #468432;
+    border: 1px solid #468432;
+    background: rgba(255,255,255,.8);
+}
+
+.hero-iran-iraq__btn--outline:hover {
+    background: #468432;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .hero-iran-iraq {
+        min-height: 600px;
+        background-position: center;
+    }
+
+    .hero-iran-iraq__container {
+        padding: 100px 20px;
+    }
+
+    .hero-iran-iraq__content {
+        margin: 0;
+    }
+
+    .hero-iran-iraq__content p {
+        font-size: 16px;
+    }
+
+    .hero-iran-iraq__buttons {
+        flex-direction: column;
+    }
+
+    .hero-iran-iraq__btn {
+        width: 100%;
+    }
+}

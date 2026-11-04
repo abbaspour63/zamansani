@@ -1,0 +1,139 @@
+
+.zs-hero-3d {
+    position: relative;
+    min-height: 720px;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 20% 30%, #e5f5df, transparent 40%),
+        linear-gradient(135deg, #f8faf7, #eaf3e5);
+    isolation: isolate;
+}
+
+.zs-hero-3d__canvas {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+}
+
+.zs-hero-3d__canvas canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.zs-hero-3d__overlay {
+    max-width: 1280px;
+    margin: auto;
+    min-height: 720px;
+    padding: 140px 24px 100px;
+    display: flex;
+    align-items: center;
+}
+
+.zs-hero-3d__content {
+    max-width: 620px;
+    margin-right: auto;
+    text-align: right;
+}
+
+.zs-hero-3d__badge {
+    display: inline-block;
+    padding: 10px 18px;
+    border: 1px solid #468432;
+    border-radius: 50px;
+    color: #468432;
+    font-size: 12px;
+    letter-spacing: 1px;
+    background: rgba(255,255,255,.65);
+}
+
+.zs-hero-3d__content h1 {
+    margin-top: 25px;
+    font-size: clamp(36px, 5vw, 68px);
+    font-weight: 900;
+    line-height: 1.5;
+    color: #30382e;
+}
+
+.zs-hero-3d__content h1 span {
+    display: block;
+    color: #468432;
+}
+
+.zs-hero-3d__content p {
+    margin-top: 22px;
+    font-size: 18px;
+    line-height: 2;
+    color: #59634f;
+}
+
+.zs-hero-3d__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 30px;
+}
+
+.zs-hero-3d__btn {
+    padding: 15px 28px;
+    border-radius: 50px;
+    font-weight: 700;
+    transition: .3s;
+}
+
+.zs-hero-3d__btn--primary {
+    background: #468432;
+    color: white;
+}
+
+.zs-hero-3d__btn--primary:hover {
+    background: #315f24;
+    transform: translateY(-3px);
+}
+
+.zs-hero-3d__btn--outline {
+    border: 1px solid #468432;
+    color: #468432;
+    background: rgba(255,255,255,.7);
+}
+
+.zs-hero-3d__btn--outline:hover {
+    background: #468432;
+    color: white;
+}
+
+.zs-hero-3d__scroll {
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #59634f;
+    font-size: 12px;
+}
+
+@media (max-width: 768px) {
+    .zs-hero-3d,
+    .zs-hero-3d__overlay {
+        min-height: 650px;
+    }
+
+    .zs-hero-3d__overlay {
+        padding: 100px 22px;
+    }
+
+    .zs-hero-3d__content {
+        margin: 0;
+    }
+
+    .zs-hero-3d__content p {
+        font-size: 15px;
+    }
+
+    .zs-hero-3d__actions {
+        flex-direction: column;
+    }
+
+    .zs-hero-3d__btn {
+        text-align: center;
+    }
+}

@@ -1,241 +1,286 @@
 
-<?php
+<?php $home = home_url('/'); ?>
 
-?>
+<footer dir="rtl" class="bg-[#F4F5F0] px-3 md:px-6 pt-4 pb-3">
 
-<footer style="background-color: #252D27; color: white;"
-        class="relative overflow-hidden">
-    <!-- Basra decorative background -->
-    <div class="pointer-events-none absolute inset-0 opacity-[0.08]">
+    <!-- HERO FOOTER -->
+    <section class="relative overflow-hidden rounded-[28px] md:rounded-[48px]
+                    bg-[#468432] text-white">
 
-        <svg viewBox="0 0 1200 450"
-             class="absolute bottom-0 h-auto w-full"
-             fill="none"
-             xmlns="http://www.w3.org/2000/svg">
+        <!-- Background Decoration -->
+        <div class="absolute -top-40 -left-40 w-[500px] h-[500px]
+                    rounded-full border border-white/10"></div>
 
-            <!-- River -->
-            <path d="M0 340 C180 280 300 390 500 330 S850 280 1200 350"
-                  stroke="#FFFFFF" stroke-width="4"/>
+        <div class="absolute top-0 right-0 w-1/2 h-full
+                    bg-gradient-to-l from-[#244D20]/70 to-transparent"></div>
 
-            <path d="M0 370 C180 310 300 420 500 360 S850 310 1200 380"
-                  stroke="#FFFFFF" stroke-width="3"/>
+        <div class="relative z-10 px-6 py-12 md:px-16 md:py-20">
 
-            <!-- Basra skyline -->
-            <path d="M100 320 V220 H145 V320
-                     M160 320 V180 H205 V320
-                     M220 320 V240 H270 V320
-                     M300 320 V200 H350 V320
-                     M380 320 V250 H430 V320"
-                  stroke="#FFFFFF" stroke-width="3"/>
+            <div class="flex items-center gap-3 text-xs md:text-sm
+                        text-white/70 tracking-widest">
 
-            <!-- Palm trees -->
-            <g stroke="#FFFFFF" stroke-width="4" stroke-linecap="round">
-                <path d="M900 330 Q910 230 900 130"/>
-                <path d="M900 150 Q840 90 800 120"/>
-                <path d="M900 150 Q950 80 1000 110"/>
-                <path d="M900 150 Q870 60 850 45"/>
-                <path d="M900 150 Q940 50 960 40"/>
-                <path d="M900 150 Q820 130 790 170"/>
-                <path d="M900 150 Q980 130 1020 170"/>
-            </g>
+                <span class="w-2 h-2 rounded-full bg-[#D8E9B5]"></span>
 
-            <!-- Traditional boat -->
-            <path d="M520 300 Q620 350 720 300 L690 330 H550 Z"
-                  stroke="#FFFFFF" stroke-width="3"/>
-            <path d="M620 300 V210 L680 290 H620"
-                  stroke="#FFFFFF" stroke-width="3"/>
+                ZAMAN SANI · IRAN / BASRA
 
-        </svg>
-    </div>
+            </div>
 
-    <div class="relative mx-auto max-w-7xl px-6">
+            <!-- Main Heading -->
+            <h2 class="mt-12 md:mt-16
+                       text-4xl sm:text-6xl md:text-8xl
+                       lg:text-[110px]
+                       font-black leading-tight tracking-tight">
 
-        <!-- Top section -->
-        <div class="grid gap-12 border-b border-white/10 py-16 md:grid-cols-2 lg:grid-cols-4">
+                ارتباطی
 
-            <!-- Brand -->
-            <div class="lg:col-span-1">
+                <span class="block text-[#D8E9B5]">
+                    فراتر از مرزها.
+                </span>
 
-                <a href="<?php echo esc_url(home_url('/')); ?>"
-                   class="mb-5 inline-block text-3xl font-black tracking-tight">
+            </h2>
 
-                    زمان <span class="text-[#72B65B]">ثانی</span>
+            <div class="mt-10 md:mt-14 flex flex-col md:flex-row
+                        justify-between items-start md:items-end gap-8">
 
-                </a>
+                <p class="max-w-lg text-sm md:text-lg
+                          text-white/75 leading-8">
 
-                <p class="mb-6 max-w-sm text-sm leading-8 text-gray-300">
-                    گروه بازاریابی زمان ثانی؛ همراه کسب‌وکارها برای
-                    حضور مؤثر، رشد و توسعه در بازار عراق و شهر بصره.
+                    از ایران تا بصره، همراه کسب‌وکارها
+                    برای ساخت فرصت‌های تازه،
+                    توسعه بازار و همکاری‌های پایدار.
+
                 </p>
 
-                <div class="flex items-center gap-3 text-sm text-[#A8D394]">
+                <a href="<?php echo esc_url(home_url('/contact/')); ?>"
+                   class="group flex items-center gap-4
+                          bg-[#D8E9B5] text-[#253D20]
+                          rounded-full px-6 py-3
+                          font-bold whitespace-nowrap
+                          hover:bg-white transition duration-300">
 
-                    <span class="flex h-9 w-9 items-center justify-center rounded-full bg-[#468432]/20">
-                        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none"
-                             stroke="currentColor" stroke-width="1.7">
-                            <path d="M12 21s7-5.5 7-12a7 7 0 1 0-14 0c0 6.5 7 12 7 12Z"/>
-                            <circle cx="12" cy="9" r="2.5"/>
-                        </svg>
+                    شروع یک همکاری
+
+                    <span class="w-11 h-11 rounded-full
+                                 bg-[#468432] text-white
+                                 flex items-center justify-center
+                                 text-xl
+                                 group-hover:-rotate-45
+                                 transition duration-300">
+
+                        ↗
+
                     </span>
 
-                    <span>بصره، عراق</span>
+                </a>
+
+            </div>
+
+            <!-- Iran / Basra Connection -->
+            <div class="mt-16 md:mt-24
+                        flex items-center justify-between">
+
+                <span class="font-bold text-sm md:text-lg">
+                    🇮🇷 ایران
+                </span>
+
+                <div class="flex-1 mx-4 relative">
+
+                    <div class="border-t border-dashed
+                                border-white/40"></div>
+
+                    <span class="absolute left-1/2 -translate-x-1/2
+                                 -top-5 w-10 h-10 rounded-full
+                                 bg-[#D8E9B5] text-[#468432]
+                                 flex items-center justify-center
+                                 text-xl">
+
+                        ✦
+
+                    </span>
 
                 </div>
 
+                <span class="font-bold text-sm md:text-lg">
+                    🇮🇶 بصره
+                </span>
+
             </div>
 
-            <!-- Quick links -->
-            <div>
-                <h3 class="mb-6 text-lg font-bold">
-                    دسترسی سریع
-                </h3>
+        </div>
 
-                <ul class="space-y-4 text-sm text-gray-300">
+    </section>
 
-                    <li>
-                        <a href="<?php echo esc_url(home_url('/')); ?>"
-                           class="transition hover:text-[#A8D394]">
-                            صفحه اصلی
-                        </a>
-                    </li>
 
-                    <li>
-                        <a href="<?php echo esc_url(home_url('/about/')); ?>"
-                           class="transition hover:text-[#A8D394]">
-                            درباره ما
-                        </a>
-                    </li>
+    <!-- MAIN FOOTER -->
+    <section class="mt-4 overflow-hidden
+                    rounded-[28px] md:rounded-[48px]
+                    bg-[#172019] text-white">
 
-                    <li>
-                        <a href="<?php echo esc_url(home_url('/services/')); ?>"
-                           class="transition hover:text-[#A8D394]">
-                            خدمات ما
-                        </a>
-                    </li>
+        <div class="px-6 py-12 md:px-16 md:py-16">
 
-                    <li>
-                        <a href="<?php echo esc_url(home_url('/portfolio/')); ?>"
-                           class="transition hover:text-[#A8D394]">
-                            نمونه‌کارها
-                        </a>
-                    </li>
+            <!-- Columns -->
+            <div class="grid grid-cols-1 md:grid-cols-3
+                        gap-12 md:gap-8">
 
-                    <li>
-                        <a href="<?php echo esc_url(home_url('/contact/')); ?>"
-                           class="transition hover:text-[#A8D394]">
-                            تماس با ما
-                        </a>
-                    </li>
+                <!-- BRAND -->
+                <div>
 
-                </ul>
-            </div>
+                    <a href="<?php echo esc_url($home); ?>"
+                       class="inline-block text-4xl md:text-5xl
+                              font-black tracking-tight">
 
-            <!-- Services -->
-            <div>
-                <h3 class="mb-6 text-lg font-bold">
-                    خدمات ما
-                </h3>
+                        زمان<span class="text-[#83B96A]">  ثانی  </span>
 
-                <ul class="space-y-4 text-sm text-gray-300">
+                    </a>
 
-                    <li>
-                        <a href="<?php echo esc_url(home_url('/services/branding/')); ?>"
-                           class="transition hover:text-[#A8D394]">
-                            برندینگ و هویت بصری
-                        </a>
-                    </li>
+                    <p class="mt-5 text-sm text-white/50 leading-8">
 
-                    <li>
-                        <a href="<?php echo esc_url(home_url('/services/digital-marketing/')); ?>"
-                           class="transition hover:text-[#A8D394]">
-                            بازاریابی دیجیتال
-                        </a>
-                    </li>
+                        گروه بازاریابی زمان ثانی<br>
+                        پل ارتباطی ایران و عراق
 
-                    <li>
-                        <a href="<?php echo esc_url(home_url('/services/seo/')); ?>"
-                           class="transition hover:text-[#A8D394]">
-                            سئو و بهینه‌سازی
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="<?php echo esc_url(home_url('/services/')); ?>"
-                           class="transition hover:text-[#A8D394]">
-                            مشاوره کسب‌وکار
-                        </a>
-                    </li>
-
-                </ul>
-            </div>
-
-            <!-- Basra identity -->
-            <div>
-                <h3 class="mb-6 text-lg font-bold">
-                    همراه شما در بصره
-                </h3>
-
-                <div class="mb-5 rounded-2xl border border-white/10 bg-white/5 p-5">
-
-                    <div class="mb-3 flex items-center gap-3">
-                        <span class="text-3xl">🌴</span>
-                        <span class="font-bold text-[#A8D394]">
-                            از قلب جنوب عراق
-                        </span>
-                    </div>
-
-                    <p class="text-sm leading-7 text-gray-300">
-                        شناخت بازار محلی، ارتباطات تجاری و
-                        فرصت‌های رشد در بصره.
                     </p>
 
+                    <!-- Social -->
+                    <div class="flex gap-3 mt-7">
+
+                        <a href="#"
+                           aria-label="Instagram"
+                           class="w-10 h-10 rounded-full border
+                                  border-white/20 flex items-center
+                                  justify-center text-sm
+                                  hover:bg-[#468432] transition">
+
+                            
+                        </a>
+
+                        <a href="#"
+                           aria-label="LinkedIn"
+                           class="w-10 h-10 rounded-full border
+                                  border-white/20 flex items-center
+                                  justify-center text-sm
+                                  hover:bg-[#468432] transition">
+
+                            
+
+                        </a>
+
+                        <a href="#"
+                           aria-label="Telegram"
+                           class="w-10 h-10 rounded-full border
+                                  border-white/20 flex items-center
+                                  justify-center text-sm
+                                  hover:bg-[#468432] transition">
+
+                            
+
+                        </a>
+
+                    </div>
+
                 </div>
 
-                <a href="<?php echo esc_url(home_url('/contact/')); ?>"
-                   class="inline-flex items-center gap-2 rounded-xl bg-[#468432] px-5 py-3 text-sm font-bold transition hover:bg-[#579C40]">
 
-                    ارتباط با ما
+                <!-- LINKS -->
+                <div>
 
-                    <span aria-hidden="true">←</span>
+                    <p class="text-white/40 text-sm mb-7">
+                        دسترسی سریع
+                    </p>
 
-                </a>
+                    <div class="grid grid-cols-2 gap-y-6 text-sm">
+
+                        <a href="<?php echo esc_url($home); ?>"
+                           class="hover:text-[#83B96A] transition">
+                            صفحه اصلی
+                        </a>
+
+                        <a href="<?php echo esc_url(home_url('/about/')); ?>"
+                           class="hover:text-[#83B96A] transition">
+                            درباره ما
+                        </a>
+
+                        <a href="<?php echo esc_url(home_url('/services/')); ?>"
+                           class="hover:text-[#83B96A] transition">
+                            خدمات
+                        </a>
+
+                        <a href="<?php echo esc_url(home_url('/contact/')); ?>"
+                           class="hover:text-[#83B96A] transition">
+                            تماس
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CONTACT -->
+                <div>
+
+                    <p class="text-white/40 text-sm mb-7">
+                        با ما در ارتباط باشید
+                    </p>
+
+                    <a href="mailto:info@zamansani.com"
+                       class="block text-lg md:text-xl
+                              hover:text-[#83B96A] transition">
+
+                        info@zamansani.com
+
+                    </a>
+
+                    <a href="tel:+9647701234567"
+                       dir="ltr"
+                       class="inline-block mt-5
+                                  text-white/60
+                                  hover:text-[#83B96A] transition">
+
+                        +98917123456
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- HUGE BRAND -->
+            <div class="mt-16 md:mt-24
+                        border-t border-white/10 pt-8">
+
+                <div class="text-center font-black
+                            text-[17vw] md:text-[14vw]
+                            leading-none tracking-tighter
+                            text-white/[0.035] select-none">
+
+                    ZAMAN SANI
+
+                </div>
+
+            </div>
+
+
+            <!-- COPYRIGHT -->
+            <div class="flex flex-col md:flex-row
+                        justify-between gap-4 mt-8
+                        text-xs text-white/40">
+
+                <span>
+                    © <?php echo esc_html(date('Y')); ?> Zaman Sani
+                </span>
+
+                <span>
+                    ایران × عراق — فرصت‌های بی‌مرز
+                </span>
+
             </div>
 
         </div>
 
-        <!-- Basra visual strip -->
-        <div class="relative flex flex-col items-center justify-between gap-4 border-b border-white/10 py-7 sm:flex-row">
-
-            
-
-            <div class="flex items-center gap-4 text-2xl opacity-80">
-                <span title="نخل‌های بصره">🌴</span>
-                <span title="رودخانه">🌊</span>
-                <span title="قایق سنتی">⛵</span>
-                <span title="معماری">🏙️</span>
-            </div>
-
-        </div>
-
-        <!-- Bottom -->
-        <div class="flex flex-col items-center justify-between gap-4 py-6 text-center sm:flex-row">
-
-            <p class="text-xs text-gray-400">
-                © <?php echo esc_html(wp_date('Y')); ?>
-                تمامی حقوق برای گروه بازاریابی زمان ثانی محفوظ است.
-            </p>
-
-            <p class="text-xs text-gray-500">
-                طراحی و توسعه با ❤️
-            </p>
-
-        </div>
-
-    </div>
+    </section>
 
 </footer>
 
 <?php wp_footer(); ?>
-
 </body>
 </html>
