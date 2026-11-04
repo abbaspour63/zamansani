@@ -307,7 +307,6 @@ if (container) {
 
 function animate() {
     requestAnimationFrame(animate);
-
     const elapsed = clock.getElapsedTime();
 
     globeGroup.rotation.y += 0.0015;
