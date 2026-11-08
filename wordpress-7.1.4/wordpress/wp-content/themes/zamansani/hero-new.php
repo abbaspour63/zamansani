@@ -1,4 +1,3 @@
-
 <?php
 /**
  * ZamanSani New Hero
@@ -12,7 +11,7 @@
 </script>
 
 <section id="zs-hero-new"
-         class="relative overflow-hidden bg-[#062b32] text-white">
+         class="relative overflow-hidden zs-hero-new--basra  bg-[#062b32] text-white">
 
     <!-- Background -->
     <div class="pointer-events-none absolute inset-0">
