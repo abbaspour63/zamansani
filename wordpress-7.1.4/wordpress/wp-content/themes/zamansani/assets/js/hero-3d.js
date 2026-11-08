@@ -1,386 +1,624 @@
-import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js';
 
-const container = document.getElementById('zs-hero-canvas');
+(() => {
+    'use strict';
 
-if (container) {
+    // جلوگیری از اجرای مجدد
+    if (window.zsHero3DInitialized) return;
+    window.zsHero3DInitialized = true;
 
+    // بررسی Three.js
+    if (typeof THREE === 'undefined') {
+        console.error('ZamanSani Hero: Three.js is not loaded.');
+        return;
+    }
+
+    // Canvas
+    const canvas = document.querySelector('#zs-hero-canvas');
+
+    if (!canvas) {
+        console.warn('ZamanSani Hero: Canvas not found.');
+        return;
+    }
+
+    const hero = document.querySelector('.zs-hero-3d') || canvas.parentElement;
+
+    // Scene
     const scene = new THREE.Scene();
 
+    // Camera
     const camera = new THREE.PerspectiveCamera(
         45,
-        container.clientWidth / container.clientHeight,
+        1,
         0.1,
         100
     );
 
-    camera.position.set(0, 0, 7);
+    camera.position.set(0, 0, 5.2);
 
+    // Renderer
     const renderer = new THREE.WebGLRenderer({
+        canvas: canvas,
         alpha: true,
         antialias: true
     });
 
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-    renderer.setSize(container.clientWidth, container.clientHeight);
+    renderer.setPixelRatio(
+        Math.min(window.devicePixelRatio || 1, 2)
+    );
 
     renderer.setClearColor(0x000000, 0);
 
-    container.appendChild(renderer.domElement);
+    // Colors
+    const COLORS = {
+        green: 0x468432,
+        gold: 0xD9D28B,
+        white: 0xffffff
+    };
 
-    // Lights
-    scene.add(new THREE.AmbientLight(0xffffff, 1.5));
-
-    const light = new THREE.DirectionalLight(0xffffff, 3);
-    light.position.set(4, 5, 6);
-    scene.add(light);
-
-    // // Globe
-    // const globeGroup = new THREE.Group();
-    // scene.add(globeGroup);
-
-    // const globeGeometry = new THREE.SphereGeometry(1.7, 64, 64);
-
-    // const globeMaterial = new THREE.MeshStandardMaterial({
-    //     color: 0x468432,
-    //     roughness: 0.35,
-    //     metalness: 0.15
-    // });
-
-    // const globe = new THREE.Mesh(globeGeometry, globeMaterial);
-    // globeGroup.add(globe);
-
-    // // Latitude / longitude lines
-    // const wireGeometry = new THREE.SphereGeometry(1.72, 32, 24);
-
-    // const wireMaterial = new THREE.MeshBasicMaterial({
-    //     color: 0xc5e6b8,
-    //     wireframe: true,
-    //     transparent: true,
-    //     opacity: 0.18
-    // });
-
-    // globeGroup.add(
-    //     new THREE.Mesh(wireGeometry, wireMaterial)
-    // );
-
-    // // Connection arc
-    // const points = [];
-
-    // for (let i = 0; i <= 100; i++) {
-    //     const t = i / 100;
-
-    //     points.push(
-    //         new THREE.Vector3(
-    //             -1.2 + t * 2.4,
-    //             Math.sin(t * Math.PI) * 0.9,
-    //             1.1
-    //         )
-    //     );
-    // }
-
-    // const arcGeometry = new THREE.BufferGeometry()
-    //     .setFromPoints(points);
-
-    // const arcMaterial = new THREE.LineBasicMaterial({
-    //     color: 0xd9d28b
-    // });
-
-    // const arc = new THREE.Line(arcGeometry, arcMaterial);
-    // globeGroup.add(arc);
-
-    // // City points
-    // const cityGeometry = new THREE.SphereGeometry(0.07, 16, 16);
-
-    // const cityMaterial = new THREE.MeshBasicMaterial({
-    //     color: 0xffffff
-    // });
-
-    // const tehran = new THREE.Mesh(cityGeometry, cityMaterial);
-    // tehran.position.set(-0.7, 0.6, 1.5);
-    // globeGroup.add(tehran);
-
-    // const basra = new THREE.Mesh(cityGeometry, cityMaterial);
-    // basra.position.set(0.7, -0.3, 1.5);
-    // globeGroup.add(basra);
-
-    // // Particles
-    // const particleCount = 350;
-    // const particlePositions = new Float32Array(particleCount * 3);
-
-    // for (let i = 0; i < particleCount; i++) {
-    //     particlePositions[i * 3] = (Math.random() - 0.5) * 10;
-    //     particlePositions[i * 3 + 1] = (Math.random() - 0.5) * 6;
-    //     particlePositions[i * 3 + 2] = (Math.random() - 0.5) * 4;
-    // }
-
-    // const particleGeometry = new THREE.BufferGeometry();
-
-    // particleGeometry.setAttribute(
-    //     'position',
-    //     new THREE.BufferAttribute(particlePositions, 3)
-    // );
-
-    // const particleMaterial = new THREE.PointsMaterial({
-    //     color: 0x468432,
-    //     size: 0.025,
-    //     transparent: true,
-    //     opacity: 0.55
-    // });
-
-    // const particles = new THREE.Points(
-    //     particleGeometry,
-    //     particleMaterial
-    // );
-
-    // scene.add(particles);
-    
-    // Globe group
+    // Main group
     const globeGroup = new THREE.Group();
+
     scene.add(globeGroup);
 
-    // Earth texture
-    const textureLoader = new THREE.TextureLoader();
+    // =========================================
+    // Globe
+    // =========================================
 
-    const earthTexture = textureLoader.load(
-        'https://threejs.org/examples/textures/planets/earth_atmos_2048.jpg'
+    const globeGeometry = new THREE.SphereGeometry(
+        1.35,
+        64,
+        64
     );
 
-    const earthGeometry = new THREE.SphereGeometry(1.7, 96, 96);
+    // =========================================
+    // Realistic Earth Texture
+    // =========================================
 
-    const earthMaterial = new THREE.MeshStandardMaterial({
+    // =========================================
+// Earth Texture Loader
+// =========================================
+
+const textureLoader = new THREE.TextureLoader();
+
+const textureBase = canvas.dataset.textureBase;
+
+if (!textureBase) {
+    console.error('ZamanSani: Earth texture path not found.');
+    return;
+}
+
+// Earth color texture
+const earthTexture = textureLoader.load(
+    textureBase + 'earth_atmos_2048.jpg',
+
+    (texture) => {
+        texture.colorSpace = THREE.SRGBColorSpace;
+        console.log('Earth color texture loaded.');
+    },
+
+    undefined,
+
+    (error) => {
+        console.error('Earth color texture failed:', error);
+    }
+);
+
+// Earth normal texture
+const earthNormal = textureLoader.load(
+    textureBase + 'earth_normal_2048.jpg',
+
+    () => {
+        console.log('Earth normal texture loaded.');
+    },
+
+    undefined,
+
+    (error) => {
+        console.error('Earth normal texture failed:', error);
+    }
+);
+
+    // Earth surface details
+   
+
+    // Earth material
+    const globeMaterial = new THREE.MeshPhongMaterial({
+
         map: earthTexture,
-        roughness: 0.8,
-        metalness: 0.05
+
+        normalMap: earthNormal,
+
+        normalScale: new THREE.Vector2(0.5, -0.5),
+
+        specular: new THREE.Color(0x334455),
+
+        shininess: 18
+
     });
 
-    const earth = new THREE.Mesh(earthGeometry, earthMaterial);
-    globeGroup.add(earth);
-
-    // Green outer atmosphere
-    const atmosphereGeometry = new THREE.SphereGeometry(1.76, 64, 64);
-
-    const atmosphereMaterial = new THREE.MeshBasicMaterial({
-        color: 0x468432,
-        transparent: true,
-        opacity: 0.08,
-        side: THREE.BackSide
-    });
-
-    globeGroup.add(
-        new THREE.Mesh(atmosphereGeometry, atmosphereMaterial)
+    const globe = new THREE.Mesh(
+        globeGeometry,
+        globeMaterial
     );
 
-    // Geographic coordinates
-    function latLonToVector(lat, lon, radius = 1.72) {
-        const phi = THREE.MathUtils.degToRad(90 - lat);
-        const theta = THREE.MathUtils.degToRad(lon - 50);
+    globeGroup.add(globe);
 
-        return new THREE.Vector3(
-            -radius * Math.sin(phi) * Math.sin(theta),
-            radius * Math.cos(phi),
-            radius * Math.sin(phi) * Math.cos(theta)
+    // Outer globe wireframe
+    const wireGeometry = new THREE.SphereGeometry(
+        1.38,
+        32,
+        32
+    );
+
+    const wireMaterial = new THREE.MeshBasicMaterial({
+        color: COLORS.gold,
+        wireframe: true,
+        transparent: true,
+        opacity: 0.10
+    });
+
+    const wireGlobe = new THREE.Mesh(
+        wireGeometry,
+        wireMaterial
+    );
+
+    globeGroup.add(wireGlobe);
+
+    // =========================================
+    // Lighting
+    // =========================================
+
+    const ambientLight = new THREE.AmbientLight(
+        0xffffff,
+        1.5
+    );
+
+    scene.add(ambientLight);
+
+    const mainLight = new THREE.PointLight(
+        COLORS.gold,
+        2.5,
+        15
+    );
+
+    mainLight.position.set(3, 3, 5);
+
+    scene.add(mainLight);
+
+    const greenLight = new THREE.PointLight(
+        COLORS.green,
+        2,
+        12
+    );
+
+    greenLight.position.set(-3, -2, 3);
+
+    scene.add(greenLight);
+
+    // =========================================
+    // Iran and Basra locations
+    // =========================================
+
+    const tehranPoint = new THREE.Vector3(
+        -0.35,
+        0.75,
+        1.15
+    );
+
+    const basraPoint = new THREE.Vector3(
+        -0.55,
+        0.40,
+        1.18
+    );
+
+    // City markers
+    function createCityMarker(position, color) {
+
+        const group = new THREE.Group();
+
+        const core = new THREE.Mesh(
+            new THREE.SphereGeometry(
+                0.055,
+                20,
+                20
+            ),
+            new THREE.MeshBasicMaterial({
+                color: color
+            })
         );
+
+        group.add(core);
+
+        const ring = new THREE.Mesh(
+            new THREE.RingGeometry(
+                0.08,
+                0.13,
+                32
+            ),
+            new THREE.MeshBasicMaterial({
+                color: color,
+                transparent: true,
+                opacity: 0.9,
+                side: THREE.DoubleSide
+            })
+        );
+
+        ring.rotation.x = -0.25;
+
+        group.add(ring);
+
+        group.position.copy(position);
+
+        globeGroup.add(group);
+
+        return {
+            group,
+            ring
+        };
     }
 
-    // Tehran and Basra
-    const tehranPosition = latLonToVector(35.69, 51.39);
-    const basraPosition = latLonToVector(30.50, 47.81);
+    const tehranMarker = createCityMarker(
+        tehranPoint,
+        COLORS.gold
+    );
 
-    function addCity(position, color) {
-        const geometry = new THREE.SphereGeometry(0.045, 24, 24);
+    const basraMarker = createCityMarker(
+        basraPoint,
+        COLORS.white
+    );
+
+    // =========================================
+    // Connection route
+    // =========================================
+
+    const connectionCurve = new THREE.QuadraticBezierCurve3(
+        tehranPoint,
+        new THREE.Vector3(-0.95, 1.05, 1.45),
+        basraPoint
+    );
+
+    // Main route
+    const routeGeometry = new THREE.TubeGeometry(
+        connectionCurve,
+        100,
+        0.018,
+        12,
+        false
+    );
+
+    const routeMaterial = new THREE.MeshBasicMaterial({
+        color: COLORS.gold,
+        transparent: true,
+        opacity: 0.95
+    });
+
+    const connectionRoute = new THREE.Mesh(
+        routeGeometry,
+        routeMaterial
+    );
+
+    globeGroup.add(connectionRoute);
+
+    // Glow route
+    const glowGeometry = new THREE.TubeGeometry(
+        connectionCurve,
+        100,
+        0.055,
+        12,
+        false
+    );
+
+    const glowMaterial = new THREE.MeshBasicMaterial({
+        color: COLORS.gold,
+        transparent: true,
+        opacity: 0.14
+    });
+
+    const connectionGlow = new THREE.Mesh(
+        glowGeometry,
+        glowMaterial
+    );
+
+    globeGroup.add(connectionGlow);
+
+    // =========================================
+    // Moving connection lights
+    // =========================================
+
+    function createConnectionLight(color, size) {
 
         const material = new THREE.MeshBasicMaterial({
             color: color
         });
 
-        const point = new THREE.Mesh(geometry, material);
-        point.position.copy(position);
-        globeGroup.add(point);
+        const light = new THREE.Mesh(
+            new THREE.SphereGeometry(
+                size,
+                24,
+                24
+            ),
+            material
+        );
 
-        // Glow ring
-        const ring = new THREE.Mesh(
-            new THREE.RingGeometry(0.07, 0.10, 32),
+        globeGroup.add(light);
+
+        return light;
+    }
+
+    const connectionLight = createConnectionLight(
+        COLORS.white,
+        0.075
+    );
+
+    const connectionLight2 = createConnectionLight(
+        COLORS.gold,
+        0.09
+    );
+
+    // Light halos
+    function createHalo(light, color) {
+
+        const halo = new THREE.Mesh(
+            new THREE.SphereGeometry(
+                0.15,
+                24,
+                24
+            ),
             new THREE.MeshBasicMaterial({
                 color: color,
                 transparent: true,
-                opacity: 0.8,
-                side: THREE.DoubleSide
+                opacity: 0.18
             })
         );
 
-        ring.position.copy(position);
-        ring.lookAt(position.clone().multiplyScalar(2));
-        globeGroup.add(ring);
+        globeGroup.add(halo);
 
-        return point;
+        return halo;
     }
 
-    addCity(tehranPosition, 0xd9d28b);
-    addCity(basraPosition, 0x7cff78);
+    const lightHalo1 = createHalo(
+        connectionLight,
+        COLORS.white
+    );
 
-    // Connection arc
-    const arcPoints = [];
+    const lightHalo2 = createHalo(
+        connectionLight2,
+        COLORS.gold
+    );
 
-    const start = tehranPosition.clone().normalize();
-    const end = basraPosition.clone().normalize();
+    // =========================================
+    // Orbit rings
+    // =========================================
 
-    for (let i = 0; i <= 100; i++) {
-        const t = i / 100;
+    function createOrbit(radius, rotationX, rotationY) {
 
-        const direction = start.clone().lerp(end, t).normalize();
-
-        const height = Math.sin(t * Math.PI) * 0.22;
-
-        arcPoints.push(
-            direction.multiplyScalar(1.72 + height)
+        const geometry = new THREE.TorusGeometry(
+            radius,
+            0.006,
+            8,
+            180
         );
+
+        const material = new THREE.MeshBasicMaterial({
+            color: COLORS.gold,
+            transparent: true,
+            opacity: 0.18
+        });
+
+        const orbit = new THREE.Mesh(
+            geometry,
+            material
+        );
+
+        orbit.rotation.x = rotationX;
+        orbit.rotation.y = rotationY;
+
+        globeGroup.add(orbit);
+
+        return orbit;
     }
 
-    const arcGeometry = new THREE.BufferGeometry()
-        .setFromPoints(arcPoints);
+    const orbit1 = createOrbit(
+        1.65,
+        Math.PI / 2.4,
+        0.3
+    );
 
-    const arcMaterial = new THREE.LineBasicMaterial({
-        color: 0xd9d28b,
+    const orbit2 = createOrbit(
+        1.85,
+        Math.PI / 3,
+        -0.6
+    );
+
+    // =========================================
+    // Particles
+    // =========================================
+
+    const particleCount = 350;
+
+    const particlePositions = new Float32Array(
+        particleCount * 3
+    );
+
+    for (let i = 0; i < particleCount; i++) {
+
+        particlePositions[i * 3] =
+            (Math.random() - 0.5) * 7;
+
+        particlePositions[i * 3 + 1] =
+            (Math.random() - 0.5) * 5;
+
+        particlePositions[i * 3 + 2] =
+            (Math.random() - 0.5) * 4;
+    }
+
+    const particlesGeometry = new THREE.BufferGeometry();
+
+    particlesGeometry.setAttribute(
+        'position',
+        new THREE.BufferAttribute(
+            particlePositions,
+            3
+        )
+    );
+
+    const particlesMaterial = new THREE.PointsMaterial({
+        color: COLORS.gold,
+        size: 0.025,
         transparent: true,
-        opacity: 0.95
+        opacity: 0.55,
+        sizeAttenuation: true
     });
 
-    const connectionArc = new THREE.Line(
-        arcGeometry,
-        arcMaterial
+    const particles = new THREE.Points(
+        particlesGeometry,
+        particlesMaterial
     );
 
-    globeGroup.add(connectionArc);
+    scene.add(particles);
 
-    // Orbit rings
-    const orbit1 = new THREE.Mesh(
-        new THREE.TorusGeometry(2.05, 0.008, 8, 120),
-        new THREE.MeshBasicMaterial({
-            color: 0x468432,
-            transparent: true,
-            opacity: 0.5
-        })
-    );
+    // =========================================
+    // Mouse interaction
+    // =========================================
 
-    orbit1.rotation.x = 1.1;
-    orbit1.rotation.y = 0.4;
-
-    scene.add(orbit1);
-
-    const orbit2 = orbit1.clone();
-    orbit2.rotation.x = 2.0;
-    orbit2.rotation.y = 1.2;
-
-    scene.add(orbit2);
-
-
-
-
-
-    // Mouse movement
     let mouseX = 0;
     let mouseY = 0;
 
-    container.addEventListener('mousemove', (event) => {
-        const rect = container.getBoundingClientRect();
+    let targetRotationX = 0;
+    let targetRotationY = 0;
 
-        mouseX = ((event.clientX - rect.left) / rect.width - 0.5) * 0.5;
-        mouseY = ((event.clientY - rect.top) / rect.height - 0.5) * 0.3;
-    });
+    if (hero) {
 
-    // Animation
-    const clock = new THREE.Clock();
+        hero.addEventListener(
+            'mousemove',
+            (event) => {
 
-    // function animate() {
-    //     requestAnimationFrame(animate);
+                const rect = hero.getBoundingClientRect();
 
-    //     const elapsed = clock.getElapsedTime();
+                mouseX =
+                    ((event.clientX - rect.left) / rect.width) * 2 - 1;
 
-    //     globeGroup.rotation.y += 0.002;
-    //     globeGroup.rotation.y += (mouseX - globeGroup.rotation.y) * 0.002;
-    //     globeGroup.rotation.x += (mouseY - globeGroup.rotation.x) * 0.002;
+                mouseY =
+                    ((event.clientY - rect.top) / rect.height) * 2 - 1;
 
-    //     particles.rotation.y = elapsed * 0.02;
+                targetRotationY = mouseX * 0.12;
+                targetRotationX = mouseY * 0.08;
+            }
+        );
 
-    //     renderer.render(scene, camera);
-    // }
+        hero.addEventListener(
+            'mouseleave',
+            () => {
+                targetRotationX = 0;
+                targetRotationY = 0;
+            }
+        );
+    }
 
-function animate() {
-    requestAnimationFrame(animate);
-    const elapsed = clock.getElapsedTime();
-
-    globeGroup.rotation.y += 0.0015;
-
-    globeGroup.rotation.y +=
-        (mouseX - globeGroup.rotation.y) * 0.002;
-
-    globeGroup.rotation.x +=
-        (mouseY - globeGroup.rotation.x) * 0.002;
-
-    orbit1.rotation.z = elapsed * 0.08;
-    orbit2.rotation.z = -elapsed * 0.05;
-
-    // particles.rotation.y = elapsed * 0.02;
-
-    renderer.render(scene, camera);
-
-const progress = (elapsed * 0.18) % 1;
-
-connectionLight.position.copy(
-    connectionCurve.getPoint(progress)
-);
-
-}
-
-
-    animate();
-
+    // =========================================
     // Responsive
-    window.addEventListener('resize', () => {
-        camera.aspect = container.clientWidth / container.clientHeight;
+    // =========================================
+
+    function resize() {
+
+        const width = hero.clientWidth || window.innerWidth;
+        const height = hero.clientHeight || window.innerHeight;
+
+        if (!width || !height) return;
+
+        camera.aspect = width / height;
+
+        camera.position.z =
+            width < 768 ? 8.2 : 7;
+
         camera.updateProjectionMatrix();
 
         renderer.setSize(
-            container.clientWidth,
-            container.clientHeight
+            width,
+            height,
+            false
         );
-    });
-}
+    }
 
+    resize();
 
+    window.addEventListener(
+        'resize',
+        resize
+    );
 
-const connectionCurve = new THREE.QuadraticBezierCurve3(
-    tehranPoint,
-    new THREE.Vector3(0, 2.2, 0),
-    basraPoint
-);
+    // =========================================
+    // Animation
+    // =========================================
 
-// مسیر اصلی ارتباط
-const connectionGeometry = new THREE.TubeGeometry(
-    connectionCurve,
-    100,
-    0.018,
-    8,
-    false
-);
+    const clock = new THREE.Clock();
 
-const connectionMaterial = new THREE.MeshBasicMaterial({
-    color: 0xffd700
-});
+    function animate() {
 
-const connectionLine = new THREE.Mesh(
-    connectionGeometry,
-    connectionMaterial
-);
+        requestAnimationFrame(animate);
 
-scene.add(connectionLine);
+        const elapsed = clock.getElapsedTime();
 
-// نقطه نور متحرک روی مسیر
-const connectionLight = new THREE.Mesh(
-    new THREE.SphereGeometry(0.055, 16, 16),
-    new THREE.MeshBasicMaterial({
-        color: 0xffffff
-    })
-);
+        // Globe rotation
+        globeGroup.rotation.y += 0.0008;
 
-scene.add(connectionLight);
+        // Mouse movement
+        globeGroup.rotation.x +=
+            (targetRotationX - globeGroup.rotation.x) * 0.025;
+
+        globeGroup.rotation.y +=
+            (targetRotationY - globeGroup.rotation.y) * 0.025;
+
+        // Orbit animation
+        orbit1.rotation.z = elapsed * 0.08;
+
+        orbit2.rotation.z = -elapsed * 0.05;
+
+        // Route lights
+        const progress = (elapsed * 0.12) % 1;
+
+        const point1 = connectionCurve.getPoint(
+            progress
+        );
+
+        const point2 = connectionCurve.getPoint(
+            (progress + 0.5) % 1
+        );
+
+        connectionLight.position.copy(point1);
+
+        connectionLight2.position.copy(point2);
+
+        // Light halos follow moving lights
+        lightHalo1.position.copy(point1);
+
+        lightHalo2.position.copy(point2);
+
+        // Pulsing
+        const pulse =
+            1 + Math.sin(elapsed * 3) * 0.15;
+
+        lightHalo1.scale.setScalar(pulse);
+
+        lightHalo2.scale.setScalar(pulse);
+
+        // City rings
+        tehranMarker.ring.rotation.z =
+            elapsed * 0.8;
+
+        basraMarker.ring.rotation.z =
+            -elapsed * 0.8;
+
+        // Particle movement
+        particles.rotation.y = elapsed * 0.015;
+
+        // Render
+        renderer.render(
+            scene,
+            camera
+        );
+    }
+
+    animate();
+
+})();

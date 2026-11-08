@@ -1,8 +1,12 @@
-
 <section class="zs-hero-3d" dir="rtl">
 
-    <div class="zs-hero-3d__canvas" id="zs-hero-canvas"></div>
-
+    <canvas
+        class="zs-hero-3d__canvas"
+        id="zs-hero-canvas"
+        data-texture-base="<?php echo esc_url(get_template_directory_uri() . '/assets/images/'); ?>"
+        aria-hidden="true">
+    </canvas>
+   
     <div class="zs-hero-3d__overlay">
         <div class="zs-hero-3d__content">
 
@@ -22,12 +26,12 @@
 
             <div class="zs-hero-3d__actions">
                 <a href="<?php echo esc_url(home_url('/services/')); ?>"
-                   class="zs-hero-3d__btn zs-hero-3d__btn--primary">
+                    class="zs-hero-3d__btn zs-hero-3d__btn--primary">
                     مشاهده خدمات
                 </a>
 
                 <a href="<?php echo esc_url(home_url('/contact/')); ?>"
-                   class="zs-hero-3d__btn zs-hero-3d__btn--outline">
+                    class="zs-hero-3d__btn zs-hero-3d__btn--outline">
                     درخواست مشاوره
                 </a>
             </div>
