@@ -1,13 +1,7 @@
 <?php get_header(); ?>
-<!-- --><?php //include get_template_directory() . '/hero-alternative.php'; ?><!-- -->
-<!-- --><?php //include get_template_directory() . '/hero-third.php'; ?><!-- -->
-<!-- --><?php //include get_template_directory() . '/hero-showroom.php'; ?><!--  -->
-<!-- --><?php //include get_template_directory() . '/hero-cultural.php'; ?><!-- -->
 <?php //include get_template_directory() . '/hero-3d.php'; ?>
 <?php include get_template_directory() . '/hero-new.php'; ?>
 <main>
-
- 
 <!-- SERVICES SECTION -->
 <section id="services" dir="rtl"
     class="bg-[#F4F5F0] px-5 md:px-8 py-20 md:py-28">

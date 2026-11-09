@@ -1,116 +1,107 @@
-<?php
-/*
-Template Name: About ZamanSani
-*/
+<?php 
 get_header();
 ?>
+<!--<section id="about-us" class="about-us-section relative overflow-hidden bg-white py-24">-->
+<!---->
+<!--    <div class="container mx-auto px-6">-->
+<!---->
+<!--        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">-->
+<!---->
+<!--            <!-- Content -->-->
+<!--            <div class="about-content text-right">-->
+<!---->
+<!--                <span class="inline-block text-[#468432] font-semibold mb-4">-->
+<!--                    درباره گروه بازاریابی  زمان ثانی-->
+<!--                </span>-->
+<!---->
+<!--                <h2 class="text-3xl md:text-5xl font-bold text-[#3D3D3D] leading-relaxed mb-8">-->
+<!--                    همراه شما در مسیر-->
+<!--                    <span class="text-[#468432]">-->
+<!--                        رشد و توسعه کسب‌وکار-->
+<!--                    </span>-->
+<!--                </h2>-->
+<!---->
+<!--                <p class="text-gray-600 text-lg leading-9 mb-6">-->
+<!--                    گروه بازاریابی زمان ثانی با هدف توسعه کسب‌وکارها،-->
+<!--                    ایجاد فرصت‌های جدید و ارائه راهکارهای نوین بازاریابی-->
+<!--                    فعالیت می‌کند.-->
+<!--                </p>-->
+<!---->
+<!--                <p class="text-gray-600 text-lg leading-9 mb-8">-->
+<!--                    ما با شناخت بازارهای منطقه‌ای و ظرفیت‌های تجاری-->
+<!--                    ایران و عراق، در کنار کسب‌وکارها هستیم تا مسیر-->
+<!--                    رشد، ارتباط و موفقیت را هموار کنیم.-->
+<!--                </p>-->
+<!---->
+<!--                <a href="--><?php //echo esc_url(home_url('/contact')); ?><!--"-->
+<!--                   class="inline-flex items-center gap-3 bg-[#468432] text-white px-8 py-4 rounded-xl hover:bg-[#356728] transition duration-300">-->
+<!---->
+<!--                    ارتباط با ما-->
+<!---->
+<!--                    <span aria-hidden="true">←</span>-->
+<!---->
+<!--                </a>-->
+<!---->
+<!--            </div>-->
+<!---->
+<!--            <!-- Visual -->-->
+<!--            <div class="about-visual relative">-->
+<!---->
+<!--                <div class="absolute -top-8 -right-8 w-32 h-32 bg-[#468432]/10 rounded-full blur-2xl"></div>-->
+<!---->
+<!--                <div class="relative bg-[#F5F8F3] rounded-3xl p-8 md:p-12">-->
+<!---->
+<!--                    <div class="aspect-square flex items-center justify-center">-->
+<!---->
+<!--                        <div class="relative w-full max-w-sm aspect-square rounded-full border border-[#468432]/20 flex items-center justify-center">-->
+<!---->
+<!--                            <div class="absolute inset-8 rounded-full border border-[#468432]/30"></div>-->
+<!---->
+<!--                            <div class="absolute inset-16 rounded-full border border-[#468432]/20"></div>-->
+<!---->
+<!--                            <div class="w-32 h-32 bg-[#468432] rounded-full flex items-center justify-center shadow-2xl shadow-[#468432]/30">-->
+<!---->
+<!--                                <span class="text-white text-4xl font-bold">-->
+<!--                                    ZS-->
+<!--                                </span>-->
+<!---->
+<!--                            </div>-->
+<!---->
+<!--                            <span class="absolute top-8 right-12 w-4 h-4 bg-[#468432] rounded-full"></span>-->
+<!---->
+<!--                            <span class="absolute bottom-12 left-8 w-3 h-3 bg-[#D9D28B] rounded-full"></span>-->
+<!---->
+<!--                        </div>-->
+<!---->
+<!--                    </div>-->
+<!---->
+<!--                    <div class="text-center mt-6">-->
+<!---->
+<!--                        <h3 class="text-[#3D3D3D] text-xl font-bold">-->
+<!--                            ارتباط، توسعه، موفقیت-->
+<!--                        </h3>-->
+<!---->
+<!--                        <p class="text-gray-500 mt-2">-->
+<!--                            ایران · عراق · بصره-->
+<!--                        </p>-->
+<!---->
+<!--                    </div>-->
+<!---->
+<!--                </div>-->
+<!---->
+<!--            </div>-->
+<!---->
+<!--        </div>-->
+<!---->
+<!--    </div>-->
+<!---->
+<!--</section>-->
+ <?php
 
-<main dir="rtl" class="bg-white text-[#3D3D3D]">
+    echo '<h1>ABOUT PAGE TEST</h1>';
+    
+?>
 
-    <!-- Hero -->
-    <section class="relative overflow-hidden bg-[#3D3D3D] text-white py-24">
-        <div class="max-w-7xl mx-auto px-6">
-            <span class="text-[#8BC34A]">ZAMAN SANI</span>
-
-            <h1 class="text-4xl md:text-6xl font-bold mt-5">
-                درباره ما
-            </h1>
-
-            <p class="mt-6 text-lg md:text-xl text-white/80">
-                پل ارتباطی مطمئن میان ایران و عراق
-            </p>
-        </div>
-    </section>
-
-    <!-- About -->
-    <section class="py-20">
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-
-            <div>
-                <h2 class="text-3xl font-bold mb-6">
-                    داستان زمان ثانی
-                </h2>
-
-                <p class="leading-9 text-gray-600">
-                    گروه بازاریابی زمان ثانی با هدف توسعه همکاری‌های
-                    اقتصادی و تجاری میان ایران و عراق فعالیت می‌کند.
-                    ما با ارائه راهکارهای نوآورانه در حوزه بازاریابی،
-                    ارتباطات و توسعه کسب‌وکار، به دنبال ایجاد
-                    فرصت‌های پایدار و ارزشمند برای مشتریان و شرکای خود هستیم.
-                </p>
-            </div>
-
-            <div class="rounded-3xl bg-green-50 p-10 text-center">
-                <div class="text-[#468432] text-6xl font-bold">
-                    ZS
-                </div>
-                <p class="mt-4 text-xl font-semibold">
-                    
-                </p>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Mission Vision Values -->
-    <section class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8">
-
-            <div class="bg-white p-8 rounded-2xl shadow-sm">
-                <h3 class="text-xl font-bold text-[#468432] mb-4">
-                    مأموریت ما
-                </h3>
-                <p class="leading-8 text-gray-600">
-                    ایجاد ارتباطات تجاری مؤثر و توسعه فرصت‌های
-                    همکاری میان ایران و عراق.
-                </p>
-            </div>
-
-            <div class="bg-white p-8 rounded-2xl shadow-sm">
-                <h3 class="text-xl font-bold text-[#468432] mb-4">
-                    چشم‌انداز ما
-                </h3>
-                <p class="leading-8 text-gray-600">
-                    تبدیل شدن به یکی از معتبرترین مجموعه‌های
-                    بازاریابی و توسعه کسب‌وکار در منطقه.
-                </p>
-            </div>
-
-            <div class="bg-white p-8 rounded-2xl shadow-sm">
-                <h3 class="text-xl font-bold text-[#468432] mb-4">
-                    ارزش‌های ما
-                </h3>
-                <p class="leading-8 text-gray-600">
-                    اعتماد، نوآوری، مسئولیت‌پذیری،
-                    همکاری و توسعه پایدار.
-                </p>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Contact CTA -->
-    <section class="py-20">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="bg-[#468432] text-white rounded-3xl p-10 md:p-16 text-center">
-                <h2 class="text-3xl font-bold">
-                    با هم، به سوی آینده‌ای متصل‌تر
-                </h2>
-
-                <p class="mt-5 text-white/80">
-                    آماده همکاری با شما هستیم.
-                </p>
-
-                <a href="<?php echo esc_url(home_url('/contact/')); ?>"
-                   class="inline-block mt-8 bg-white text-[#468432]
-                          px-8 py-3 rounded-full font-bold
-                          hover:bg-gray-100 transition">
-                    تماس با ما
-                </a>
-            </div>
-        </div>
-    </section>
-
-</main>
-
-<?php get_footer(); ?>
+<?php 
+get_footer();
+?>

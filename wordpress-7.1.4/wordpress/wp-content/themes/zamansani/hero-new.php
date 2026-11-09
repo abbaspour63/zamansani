@@ -64,11 +64,9 @@
             <h1 class="mb-6 text-4xl font-black leading-relaxed md:text-5xl">
 
                 گروه بازاریابی زمان ثانی
-                <h3>
-                    <span class="block text-[#55c747] md:text-2xl">
-                        International Marketing Group ZAMANSANI
-                    </span>
-                </h3>
+                <h2 class="mb-6 text-2xl text-[#55c747] font-black leading-relaxed md:text-2xl">
+                                   International Marketing Group ZAMANSANI
+                </h2>
 
 
             </h1>
@@ -152,7 +150,7 @@
             <div class="pointer-events-none absolute bottom-5 left-0 right-0 flex justify-center gap-4">
 
                 <span class="rounded-full border border-green-400/30 bg-black/30 px-5 py-2 text-sm text-green-300 backdrop-blur-md">
-                      شیراز
+                    شیراز
 
                 </span>
 

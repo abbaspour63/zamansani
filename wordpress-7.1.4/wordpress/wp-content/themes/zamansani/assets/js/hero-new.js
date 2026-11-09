@@ -45,7 +45,7 @@
     const earthTexture = textureLoader.load(
         `${window.zsHeroImages || '/wp-content/themes/zamansani/assets/images/'}earth_atmos_2048.jpg`
     );
-
+    
     // const earth = new THREE.Mesh(
     //     geometry,
     //     new THREE.MeshPhongMaterial({
