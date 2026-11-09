@@ -188,6 +188,10 @@
                             </div>
                         </div>
                     </div>
+                    <a href="<?php echo esc_url(home_url('/')); ?>"
+                        class="hover:text-[#468432] transition">
+                       تعرفه
+                    </a>
 
                 </nav>
                 <button

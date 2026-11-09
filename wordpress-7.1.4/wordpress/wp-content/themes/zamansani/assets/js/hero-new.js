@@ -1,20 +1,17 @@
 (() => {
     'use strict';
-
-    const container = document.getElementById('zs-hero-new-canvas');
+        const container = document.getElementById('zs-hero-new-canvas');
 
     if (!container || !window.THREE || container.dataset.initialized) {
         return;
     }
 
     container.dataset.initialized = 'true';
-
-    const THREE = window.THREE;
+       const THREE = window.THREE;
 
     // Scene
     const scene = new THREE.Scene();
     window.zsHeroScene = scene;
-
     const camera = new THREE.PerspectiveCamera(
         45,
         container.clientWidth / container.clientHeight,
@@ -24,8 +21,6 @@
 
     camera.position.set(0, 0, 4.8);
     window.zsHeroCamera = camera;
-
-
     const renderer = new THREE.WebGLRenderer({
         alpha: true,
         antialias: true
@@ -37,8 +32,7 @@
     container.appendChild(renderer.domElement);
     window.zsHeroRenderer = renderer;
 
-
-    // Globe
+   // Globe
     const globe = new THREE.Group();
     scene.add(globe);
 
@@ -62,23 +56,85 @@
     earthTexture.colorSpace = THREE.SRGBColorSpace;
 
     // Create Earth
+    // const earth = new THREE.Mesh(
+    //     geometry,
+    //     new THREE.MeshBasicMaterial({
+    //         map: earthTexture,
+    //         color: 0xffffff
+    //     })
+    // );
+
+    // globe.add(earth);
+    // Create Earth
+
     const earth = new THREE.Mesh(
         geometry,
-        new THREE.MeshBasicMaterial({
+        new THREE.MeshPhongMaterial({
             map: earthTexture,
-            color: 0xffffff
+            shininess: 18,
+            specular: new THREE.Color(0x222222)
         })
     );
 
     globe.add(earth);
 
-    // Lighting
-    scene.add(new THREE.AmbientLight(0xffffff, 1.2));
+    // Atmosphere
+    const atmosphere = new THREE.Mesh(
+        new THREE.SphereGeometry(radius * 1.035, 64, 64),
+        new THREE.MeshBasicMaterial({
+            color: 0x468432,
+            transparent: true,
+            opacity: 0.12,
+            side: THREE.BackSide
+        })
+    );
 
-    const light = new THREE.PointLight(0x55cc66, 2.5);
-    light.position.set(3, 2, 4);
+    globe.add(atmosphere);
+
+    // Smaller Globe
+    globe.scale.setScalar(0.72);
+    // Globe position
+    // globe.position.set(1.0,1.0,1.0);
+            // Lighting
+    // scene.add(new THREE.AmbientLight(0xffffff, 1.2));
+
+    // const light = new THREE.PointLight(0x55cc66, 2.5);
+    // light.position.set(3, 2, 4);
+    // scene.add(light);
+
+    // // Coordinate conversion
+    // function getPosition(lat, lon, r = radius) {
+    //     const phi = (90 - lat) * Math.PI / 180;
+    //     const theta = (lon + 180) * Math.PI / 180;
+
+    //     return new THREE.Vector3(
+    //         -r * Math.sin(phi) * Math.cos(theta),
+    //         r * Math.cos(phi),
+    //         r * Math.sin(phi) * Math.sin(theta)
+    //     );
+    // }
+    // Lighting
+
+    scene.add(
+        new THREE.AmbientLight(0xffffff, 0.55)
+    );
+
+    const light = new THREE.DirectionalLight(
+        0xffffff,
+        2.2
+    );
+
+    light.position.set(4, 3, 5);
     scene.add(light);
 
+    const greenLight = new THREE.PointLight(
+        0x468432,
+        2,
+        8
+    );
+
+    greenLight.position.set(-3, 1, 2);
+    scene.add(greenLight);
     // Coordinate conversion
     function getPosition(lat, lon, r = radius) {
         const phi = (90 - lat) * Math.PI / 180;
@@ -90,7 +146,6 @@
             r * Math.sin(phi) * Math.sin(theta)
         );
     }
-
     // Tehran and Basra
     const tehran = getPosition(35.6892, 51.3890, radius + 0.015);
     const basra = getPosition(30.5085, 47.7804, radius + 0.015);
@@ -155,12 +210,78 @@
     globe.add(connection);
 
     // Moving light
-    const movingLight = new THREE.Mesh(
-        new THREE.SphereGeometry(0.045, 16, 16),
-        new THREE.MeshBasicMaterial({ color: 0xffffff })
+    // const movingLight = new THREE.Mesh(
+    //     new THREE.SphereGeometry(0.045, 16, 16),
+    //     new THREE.MeshBasicMaterial({ color: 0xffffff })
+    // );
+
+    // globe.add(movingLight);
+    // Moving Arrow
+    // const arrow = new THREE.Mesh(
+    //     new THREE.ConeGeometry(0.075, 0.22, 16),
+    //     new THREE.MeshBasicMaterial({
+    //         color: 0x55ff33
+    //     })
+    // );
+
+    // globe.add(arrow);
+
+    // Moving Arrow 3D
+    const arrow = new THREE.Group();
+
+    // Arrow shaft
+    const shaft = new THREE.Mesh(
+        new THREE.CylinderGeometry(0.018, 0.018, 0.18, 12),
+        new THREE.MeshStandardMaterial({
+            color: 0x55ff33,
+            emissive: 0x225511,
+            metalness: 0.6,
+            roughness: 0.25
+        })
     );
 
-    globe.add(movingLight);
+    // Arrow head
+    const head = new THREE.Mesh(
+        new THREE.ConeGeometry(0.055, 0.12, 16),
+        new THREE.MeshStandardMaterial({
+            color: 0x99ff55,
+            emissive: 0x336611,
+            metalness: 0.5,
+            roughness: 0.2
+        })
+    );
+
+    // Position parts
+    shaft.position.y = 0.03;
+    head.position.y = 0.15;
+
+    // Add to arrow
+    arrow.add(shaft);
+    arrow.add(head);
+
+    // Add arrow to globe
+    globe.add(arrow);
+
+    // Animation
+    // const clock = new THREE.Clock();
+
+    // function animate() {
+    //     requestAnimationFrame(animate);
+
+    //     const elapsed = clock.getElapsedTime();
+
+    //     globe.rotation.y = elapsed * 0.08;
+    //     // Keep Iran and Iraq facing the camera
+    //     // globe.rotation.x = 0.58;
+    //     // globe.rotation.y = -0.87 + Math.sin(elapsed * 0.08) * 0.12;
+    //     // globe.rotation.z = 0;
+
+    //     const progress = (elapsed * 0.2) % 1;
+
+    //     movingLight.position.copy(curve.getPoint(progress));
+
+    //     renderer.render(scene, camera);
+    // }
 
     // Animation
     const clock = new THREE.Clock();
@@ -171,17 +292,24 @@
         const elapsed = clock.getElapsedTime();
 
         globe.rotation.y = elapsed * 0.08;
-        // Keep Iran and Iraq facing the camera
-        // globe.rotation.x = 0.58;
-        // globe.rotation.y = -0.87 + Math.sin(elapsed * 0.08) * 0.12;
-        // globe.rotation.z = 0;
 
         const progress = (elapsed * 0.2) % 1;
 
-        movingLight.position.copy(curve.getPoint(progress));
+        const arrowPosition = curve.getPoint(progress);
+
+        const tangent = curve.getTangent(progress).normalize();
+
+        arrow.position.copy(arrowPosition);
+
+        // Arrow direction
+        arrow.quaternion.setFromUnitVectors(
+            new THREE.Vector3(0, 1, 0),
+            tangent
+        );
 
         renderer.render(scene, camera);
     }
+
 
     animate();
 

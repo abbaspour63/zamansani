@@ -1,4 +1,5 @@
 <?php
+
 /**
  * ZamanSani New Hero
  */
@@ -6,21 +7,33 @@
 
 <script>
     window.zsHeroImages = "<?php echo esc_url(
-            get_theme_file_uri('/assets/images/')
-    ); ?>";
+                                get_theme_file_uri('/assets/images/')
+                            ); ?>";
 </script>
 
 <section id="zs-hero-new"
-         class="relative overflow-hidden zs-hero-new--basra  bg-[#062b32] text-white">
+    class="relative isolate overflow-hidden zs-hero-new--basra bg-[#062b32] text-white"">
 
     <!-- Background -->
-    <div class="pointer-events-none absolute inset-0">
+    <!-- <div class=" pointer-events-none absolute inset-0">
+
+    <div class="absolute -right-40 -top-40 h-96 w-96 rounded-full bg-[#468432]/20 blur-3xl"></div>
+
+    <div class="absolute -bottom-40 -left-40 h-96 w-96 rounded-full bg-cyan-500/10 blur-3xl"></div>
+
+    </div> -->
+    <!-- Background -->
+    <div class="zs-hero-new__background">
+
+        <div class="absolute inset-0 bg-gradient-to-l from-[#062b32]/95 via-[#062b32]/70 to-[#062b32]/40"></div>
 
         <div class="absolute -right-40 -top-40 h-96 w-96 rounded-full bg-[#468432]/20 blur-3xl"></div>
 
         <div class="absolute -bottom-40 -left-40 h-96 w-96 rounded-full bg-cyan-500/10 blur-3xl"></div>
 
     </div>
+
+
 
     <!-- Main Container -->
     <div class="relative z-10 mx-auto grid max-w-7xl items-center gap-10 px-6 py-16 lg:grid-cols-2 lg:py-24">
@@ -29,7 +42,7 @@
         <div class="text-right">
 
             <!-- Logo -->
-            <div class="mb-8 flex items-center justify-start gap-4">
+            <!-- <div class="mb-8 flex items-center justify-start gap-4">
 
                 <?php if (has_custom_logo()) : ?>
                     <?php the_custom_logo(); ?>
@@ -45,16 +58,18 @@
                     </p>
                 </div>
 
-            </div>
+            </div> -->
 
             <!-- Heading -->
             <h1 class="mb-6 text-4xl font-black leading-relaxed md:text-5xl">
 
-                گروه بازاریابی
+                گروه بازاریابی زمان ثانی
+                <h3>
+                    <span class="block text-[#55c747] md:text-2xl">
+                        International Marketing Group ZAMANSANI
+                    </span>
+                </h3>
 
-                <span class="block text-[#55c747]">
-                    زمان ثانی
-                </span>
 
             </h1>
 
@@ -93,14 +108,14 @@
             <div class="flex flex-wrap gap-4">
 
                 <a href="#contact"
-                   class="rounded-full bg-[#468432] px-8 py-4 font-bold text-white transition hover:bg-green-600">
+                    class="rounded-full bg-[#468432] px-8 py-4 font-bold text-white transition hover:bg-green-600">
 
                     با ما در ارتباط باشید
 
                 </a>
 
                 <a href="#about"
-                   class="rounded-full border border-white/30 px-8 py-4 transition hover:bg-white/10">
+                    class="rounded-full border border-white/30 px-8 py-4 transition hover:bg-white/10">
 
                     معرفی گروه
 
@@ -130,14 +145,15 @@
 
             <!-- Canvas -->
             <div id="zs-hero-new-canvas"
-                 class="absolute inset-0 h-full w-full">
+                class="absolute inset-0 h-full w-full">
             </div>
 
             <!-- Globe Labels -->
             <div class="pointer-events-none absolute bottom-5 left-0 right-0 flex justify-center gap-4">
 
                 <span class="rounded-full border border-green-400/30 bg-black/30 px-5 py-2 text-sm text-green-300 backdrop-blur-md">
-                    تهران
+                      شیراز
+
                 </span>
 
                 <span class="rounded-full border border-green-400/30 bg-black/30 px-5 py-2 text-sm text-green-300 backdrop-blur-md">

@@ -60,5 +60,11 @@ wp_enqueue_script(
 
 
 }
+wp_enqueue_style(
+    'font-awesome',
+    'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css',
+    [],
+    '6.7.2'
+);
 add_action('wp_enqueue_scripts', 'zamansani_hero_new_assets');
 

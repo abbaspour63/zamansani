@@ -34,25 +34,25 @@
         <?php
         $services = [
             [
-                'number' => '01',
+                'number' => '',
                 'title' => 'توسعه بازار عراق',
                 'description' => 'بررسی بازار، شناسایی فرصت‌ها و کمک به ورود کسب‌وکارها به بازار عراق.',
                 'icon' => 'building'
             ],
             [
-                'number' => '02',
+                'number' => '',
                 'title' => 'بازاریابی و تبلیغات',
                 'description' => 'معرفی برند، طراحی استراتژی بازاریابی و جذب مشتریان در بازار هدف.',
                 'icon' => 'marketing'
             ],
             [
-                'number' => '03',
+                'number' => '',
                 'title' => 'مشاوره تجاری',
                 'description' => 'مشاوره برای توسعه کسب‌وکار، بررسی فرصت‌ها و همکاری‌های اقتصادی.',
                 'icon' => 'business'
             ],
             [
-                'number' => '04',
+                'number' => '',
                 'title' => 'شبکه‌سازی تجاری',
                 'description' => 'ایجاد ارتباط میان شرکت‌ها، تولیدکنندگان و فعالان اقتصادی ایران و عراق.',
                 'icon' => 'network'
@@ -72,7 +72,7 @@
 
                         <div class="flex justify-between items-center">
                             <span class="text-xs font-bold tracking-widest text-gray-400">
-                                SERVICE / <?php echo esc_html($service['number']); ?>
+                                 <?php echo esc_html($service['number']); ?>
                             </span>
 
                             <span class="service-arrow">↗</span>

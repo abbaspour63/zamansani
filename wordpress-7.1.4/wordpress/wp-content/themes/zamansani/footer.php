@@ -3,7 +3,7 @@
 
 
     <!-- MAIN FOOTER -->
- 
+
     <section class="mt-4 overflow-hidden
                     rounded-[28px] md:rounded-[48px]
                     bg-[#172019] text-white">
@@ -18,10 +18,10 @@
                 <div>
 
                     <a href="<?php echo esc_url($home); ?>"
-                       class="inline-block text-4xl md:text-5xl
+                        class="inline-block text-4xl md:text-5xl
                               font-black tracking-tight">
 
-                        زمان<span class="text-[#83B96A]">  ثانی  </span>
+                        زمان<span class="text-[#83B96A]"> ثانی </span>
 
                     </a>
 
@@ -33,7 +33,7 @@
                     </p>
 
                     <!-- Social -->
-                    <div class="flex gap-3 mt-7">
+                    <!-- <div class="flex gap-3 mt-7">
 
                         <a href="#"
                            aria-label="Instagram"
@@ -67,7 +67,51 @@
 
                         </a>
 
+                    </div> -->
+
+                    <div class="flex gap-3 mt-7">
+
+                        <!-- Instagram -->
+                        <a href="https://instagram.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Instagram"
+                            class="w-10 h-10 rounded-full border
+              border-white/20 flex items-center
+              justify-center text-white
+              hover:bg-[#468432] transition">
+
+                            <i class="fa-brands fa-instagram text-lg"></i>
+                        </a>
+
+                        <!-- LinkedIn -->
+                        <a href="https://linkedin.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="LinkedIn"
+                            class="w-10 h-10 rounded-full border
+              border-white/20 flex items-center
+              justify-center text-white
+              hover:bg-[#468432] transition">
+
+                            <i class="fa-brands fa-linkedin-in text-lg"></i>
+                        </a>
+
+                        <!-- Telegram -->
+                        <a href="https://t.me/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Telegram"
+                            class="w-10 h-10 rounded-full border
+              border-white/20 flex items-center
+              justify-center text-white
+              hover:bg-[#468432] transition">
+
+                            <i class="fa-brands fa-telegram text-lg"></i>
+                        </a>
+
                     </div>
+
 
                 </div>
 
@@ -82,22 +126,22 @@
                     <div class="grid grid-cols-2 gap-y-6 text-sm">
 
                         <a href="<?php echo esc_url($home); ?>"
-                           class="hover:text-[#83B96A] transition">
+                            class="hover:text-[#83B96A] transition">
                             صفحه اصلی
                         </a>
 
                         <a href="<?php echo esc_url(home_url('/about/')); ?>"
-                           class="hover:text-[#83B96A] transition">
+                            class="hover:text-[#83B96A] transition">
                             درباره ما
                         </a>
 
                         <a href="<?php echo esc_url(home_url('/services/')); ?>"
-                           class="hover:text-[#83B96A] transition">
+                            class="hover:text-[#83B96A] transition">
                             خدمات
                         </a>
 
                         <a href="<?php echo esc_url(home_url('/contact/')); ?>"
-                           class="hover:text-[#83B96A] transition">
+                            class="hover:text-[#83B96A] transition">
                             تماس
                         </a>
 
@@ -114,7 +158,7 @@
                     </p>
 
                     <a href="mailto:info@zamansani.com"
-                       class="block text-lg md:text-xl
+                        class="block text-lg md:text-xl
                               hover:text-[#83B96A] transition">
 
                         info@zamansani.com
@@ -122,8 +166,8 @@
                     </a>
 
                     <a href="tel:+9647701234567"
-                       dir="ltr"
-                       class="inline-block mt-5
+                        dir="ltr"
+                        class="inline-block mt-5
                                   text-white/60
                                   hover:text-[#83B96A] transition">
 
@@ -169,10 +213,11 @@
 
         </div>
 
-    </section> 
+    </section>
 
 </footer>
 
 <?php wp_footer(); ?>
 </body>
+
 </html>
