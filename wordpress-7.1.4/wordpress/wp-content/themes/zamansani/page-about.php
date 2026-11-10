@@ -4,32 +4,54 @@ get_header();
 <main id="about-us" class="about-us">
 
     <!-- About Hero -->
-    <section class="about-hero">
-        <div class="about-hero__container">
 
-            <div class="about-hero__content">
-                <span class="about-hero__label">
-                    ABOUT ZAMAN SANI
-                </span>
+<section class="about-hero" dir="rtl">
 
-                <h1>
-                    درباره گروه بازاریابی
-                    <span>زمان ثانی</span>
-                </h1>
+    <div class="about-hero__container">
 
-                <p>
-                    همراه کسب‌وکارها در مسیر رشد،
-                    توسعه و خلق فرصت‌های جدید.
-                </p>
+        <div class="about-hero__content">
+
+            <span class="about-hero__label">
+                ZAMAN SANI MARKETING GROUP
+            </span>
+
+            <h1>
+                همراه شما در مسیر
+                <span>رشد و توسعه کسب‌وکار</span>
+            </h1>
+
+            <p>
+                گروه بازاریابی زمان ثانی با ارائه راهکارهای نوین بازاریابی،
+                تبلیغات و توسعه برند، به کسب‌وکارها کمک می‌کند
+                فرصت‌های جدیدی برای رشد و موفقیت خلق کنند.
+            </p>
+
+            <div class="about-hero__actions">
 
                 <a href="<?php echo esc_url(home_url('/index.php/contact/')); ?>"
                    class="about-hero__button">
                     ارتباط با ما
+                    <span aria-hidden="true">←</span>
                 </a>
+
+                <a href="#about-location"
+                   class="about-hero__link">
+                    موقعیت و دفاتر ما
+                </a>
+
             </div>
 
         </div>
-    </section>
+
+        <div class="about-hero__badge">
+            <span>Basra</span>
+            <strong>IRAQ</strong>
+        </div>
+
+    </div>
+
+</section>
+
 
   
 <section class="about-location" dir="rtl">
@@ -52,7 +74,7 @@ get_header();
         <div class="about-location__map">
             <img
                 src="<?php echo esc_url(
-                    get_theme_file_uri('/assets/images/basre-map (1).png')
+                    get_theme_file_uri('/assets/images/basre-map (4).png')
                 ); ?>"
                 alt="نقشه عراق و موقعیت استان بصره"
                 loading="lazy"

@@ -1166,3 +1166,147 @@ html:lang(en) textarea {
     }
 }
 
+
+/* About Hero */
+.about-hero {
+    position: relative;
+    overflow: hidden;
+    padding: 110px 24px;
+    background: linear-gradient(135deg, #3D3D3D 0%, #252525 100%);
+    color: #ffffff;
+}
+
+.about-hero__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 340px;
+}
+
+.about-hero__content {
+    max-width: 780px;
+    position: relative;
+    z-index: 2;
+}
+
+.about-hero__label {
+    display: inline-block;
+    color: #8bc66f;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 24px;
+}
+
+.about-hero__content h1 {
+    color: #ffffff;
+    font-size: clamp(32px, 5vw, 58px);
+    font-weight: 800;
+    line-height: 1.7;
+    margin: 0;
+}
+
+.about-hero__content h1 span {
+    display: block;
+    color: #8bc66f;
+}
+
+.about-hero__content p {
+    color: #d1d5db;
+    font-size: 17px;
+    line-height: 2.2;
+    max-width: 680px;
+    margin-top: 24px;
+}
+
+.about-hero__actions {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    flex-wrap: wrap;
+    margin-top: 32px;
+}
+
+.about-hero__button {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: #468432;
+    color: #ffffff;
+    padding: 15px 28px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: background .3s ease, transform .3s ease;
+}
+
+.about-hero__button:hover {
+    background: #579c3d;
+    transform: translateY(-3px);
+}
+
+.about-hero__link {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color .3s ease;
+}
+
+.about-hero__link:hover {
+    color: #8bc66f;
+}
+
+.about-hero__badge {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 145px;
+    height: 145px;
+    border: 1px solid rgba(139, 198, 111, .4);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #8bc66f;
+    transform: rotate(-12deg);
+}
+
+.about-hero__badge span {
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.about-hero__badge strong {
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: #ffffff;
+}
+
+@media (max-width: 768px) {
+    .about-hero {
+        padding: 75px 22px;
+    }
+
+    .about-hero__container {
+        min-height: 0;
+    }
+
+    .about-hero__content h1 {
+        font-size: 34px;
+    }
+
+    .about-hero__content p {
+        font-size: 15px;
+    }
+
+    .about-hero__badge {
+        display: none;
+    }
+
+    .about-hero__actions {
+        gap: 18px;
+    }
+}
+
