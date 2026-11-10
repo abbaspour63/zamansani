@@ -1036,3 +1036,133 @@ html:lang(en) textarea {
     background-position: center;
     background-repeat: no-repeat;
 }
+
+
+
+.about-location {
+    background: #f7f9f6;
+    padding: 100px 24px;
+}
+
+.about-location__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 60px;
+}
+
+.about-location__label {
+    color: #468432;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.about-location__content h2 {
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 800;
+    color: #3D3D3D;
+    margin: 20px 0;
+}
+
+.about-location__content h2 span {
+    color: #468432;
+}
+
+.about-location__content p {
+    color: #666;
+    line-height: 2;
+}
+
+.about-location__info {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 16px;
+    margin-top: 30px;
+}
+
+.about-location__info span {
+    color: #777;
+}
+
+.about-location__info strong {
+    color: #3D3D3D;
+}
+
+.about-location__map img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .about-location__container {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+}
+
+.about-location {
+    padding: 90px 24px;
+    background: #f7f9f6;
+}
+
+.about-location__container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.about-location__content {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 50px;
+}
+
+.about-location__label {
+    color: #468432;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.about-location__content h2 {
+    color: #3D3D3D;
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 800;
+    margin: 20px 0;
+}
+
+.about-location__content h2 span {
+    color: #468432;
+    display: block;
+}
+
+.about-location__content p {
+    color: #666;
+    line-height: 2;
+}
+
+.about-location__images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+    align-items: center;
+}
+
+.about-location__images img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+.about-location__basra img {
+    border-radius: 20px;
+}
+
+@media (max-width: 768px) {
+    .about-location__images {
+        grid-template-columns: 1fr;
+    }
+}
+
