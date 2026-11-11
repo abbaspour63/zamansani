@@ -170,7 +170,7 @@
 
                             <div class="bg-white rounded-xl shadow-xl border border-gray-100 p-2">
 
-                                <a href="<?php echo esc_url(home_url('/portfolio/')); ?>"
+                                <a href="<?php echo esc_url(home_url('/about/')); ?>"
                                     class="block px-4 py-3 rounded-lg hover:bg-green-50 hover:text-[#27790c]">
                                     درباره ما
                                 </a>
@@ -180,7 +180,7 @@
                                     تماس با ما
                                 </a>
 
-                                <a href="<?php echo esc_url(home_url('/portfolio/web-design/')); ?>"
+                                <a href="<?php echo esc_url(home_url('/Recruitment/')); ?>"
                                     class="block px-4 py-3 rounded-lg hover:bg-green-50 hover:text-[#468432]">
                                     استخدام
                                 </a>
