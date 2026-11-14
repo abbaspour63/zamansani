@@ -156,6 +156,9 @@
                     <p class="text-white/40 text-sm mb-7">
                         با ما در ارتباط باشید
                     </p>
+                     <p class="text-white/40 text-sm mb-7">
+                       شیراز-خیابان هفت تیر حدفصل خیابان هدایت و معدل  ساختمان آق بانو طبقه 1 واحد2
+                    </p>
 
                     <a href="mailto:info@zamansani.com"
                         class="block text-lg md:text-xl
@@ -204,7 +207,7 @@
                 <span>
                     © <?php echo esc_html(date('Y')); ?> Zaman Sani
                 </span>
-
+               
                 <span>
                     ایران × عراق — فرصت‌های بی‌مرز
                 </span>
