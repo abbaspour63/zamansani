@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const car = document.querySelector(".process-car");
     const steps = gsap.utils.toArray(".process-step");
     const line = document.querySelector(".process-line");
-    const track = document.querySelector(".process-track"); 
+
     
     if (!section || !car || !steps.length || !line) return;
     gsap.set(car, { x:0 });
@@ -43,25 +43,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
-function getPositions() {
-    const trackRect = track.getBoundingClientRect();
-    const carWidth = car.offsetWidth;
+// function getPositions() {
+//     const track = document.querySelector(".process-track"); 
+//     const car = document.querySelector(".process-car");    
+//     const trackRect = track.getBoundingClientRect();
+//     const carWidth = car.offsetWidth;
     
-    return steps.map(step => {
-        const rect = step.getBoundingClientRect();
+//     return steps.map(step => {
+//         const rect = step.getBoundingClientRect();
 
-        return (
-            rect.right -
-            trackRect.left -
-            rect.width / 2 -
-            carWidth / 2
-        );
-    });
-}
-let positions = getPositions();
+//         return (
+//             rect.right -
+//             trackRect.left -
+//             rect.width / 2 -
+//             carWidth / 2
+//         );
+//     });
+// }
+// let positions = getPositions();
 
-gsap.set(car, {
-    x: positions[0]
-});
+// gsap.set(car, {
+//     x: positions[0]
+// });
 
 
