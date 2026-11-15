@@ -34,7 +34,7 @@ $process_steps = [
 ?>
 
 <section id="our-process"
-    class="zs-process relative overflow-hidden bg-white py-24">
+    class="zs-process  relative overflow-hidden bg-white py-24">
 
     <div class="mx-auto max-w-6xl px-6 lg:px-8">
 
@@ -78,9 +78,9 @@ $process_steps = [
                             <?php echo esc_html($step['icon']); ?>
                         </div>
 
-                        <span class="zs-timeline__step">
+                        <!-- <span class="zs-timeline__step">
                             STEP <?php echo esc_html($step['number']); ?>
-                        </span>
+                        </span> -->
 
                         <h3>
                             <?php echo esc_html($step['title']); ?>
@@ -98,7 +98,7 @@ $process_steps = [
 
         </div>
 
-        <!-- CTA -->
+        <!-- process start  -->
         <div class="mt-16 text-center">
 
             <a href="<?php echo esc_url(home_url('/recruitment/')); ?>"
@@ -112,6 +112,6 @@ $process_steps = [
 
         </div>
 
-    </div>
+         </div>
 
 </section>

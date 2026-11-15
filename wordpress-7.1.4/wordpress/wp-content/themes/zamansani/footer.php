@@ -164,7 +164,7 @@
                         class="block text-lg md:text-xl
                               hover:text-[#83B96A] transition">
 
-                        info@zamansani.com
+                        info@zamansani.ir
 
                     </a>
 

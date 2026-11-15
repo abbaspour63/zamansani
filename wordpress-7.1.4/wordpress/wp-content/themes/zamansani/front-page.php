@@ -136,12 +136,9 @@
         </div>
 
     </section>
-
-    <?php get_template_part('template-parts/home/process'); ?>
+    <?php get_template_part('template-parts/home/process1'); ?>
     <?php get_template_part('template-parts/home/industries'); ?>
     <?php get_template_part('template-parts/home/faq'); ?>
-   
-    
 
 </main>
 

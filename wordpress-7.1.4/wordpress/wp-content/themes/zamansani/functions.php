@@ -474,3 +474,32 @@ function zamansani_process_career_application()
     wp_safe_redirect($redirect . '#careers-application');
     exit;
 }
+
+function zamansani_process_scripts() {
+
+    wp_enqueue_script(
+        'gsap',
+        'https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js',
+        array(),
+        '3.15.0',
+        true
+    );
+
+    wp_enqueue_script(
+        'gsap-scrolltrigger',
+        'https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/ScrollTrigger.min.js',
+        array('gsap'),
+        '3.15.0',
+        true
+    );
+
+    wp_enqueue_script(
+        'our-process',
+        get_template_directory_uri() . '/assets/js/our-process.js',
+        array('gsap', 'gsap-scrolltrigger'),
+        filemtime(get_template_directory() . '/assets/js/our-process.js'),
+        true
+    );
+}
+
+add_action('wp_enqueue_scripts', 'zamansani_process_scripts');                                                                                                                                                                  
