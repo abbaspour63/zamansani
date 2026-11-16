@@ -28,7 +28,7 @@
         <p>محتوایی وجود ندارد.</p>
 
     <?php endif; ?>
-    
+
 
 </main>
 <?php get_footer(); ?>

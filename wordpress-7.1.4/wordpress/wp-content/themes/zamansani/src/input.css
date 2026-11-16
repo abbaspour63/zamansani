@@ -42,8 +42,9 @@ html:lang(en) button,
 html:lang(en) input,
 html:lang(en) textarea,
 html:lang(en) select {
-font-family: "Inter", sans-serif;
+    font-family: "Inter", sans-serif;
 }
+
 .custom-logo {
     width: 150px;
     height: auto;
@@ -85,6 +86,7 @@ html:lang(en) input,
 html:lang(en) textarea {
     direction: ltr;
 }
+
 .custom-logo-link {
     display: flex;
     align-items: center;
@@ -154,10 +156,14 @@ html:lang(en) textarea {
     }
 
 }
+
 @keyframes float {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(0);
     }
+
     50% {
         transform: translateY(-15px);
     }
@@ -181,25 +187,27 @@ html:lang(en) textarea {
     from {
         transform: rotateY(-12deg) rotateX(5deg);
     }
+
     to {
         transform: rotateY(12deg) rotateX(-5deg);
     }
 }
 
 .globe-lines {
-    background: repeating-linear-gradient(
-        90deg,
-        transparent 0,
-        transparent 24%,
-        rgba(255,255,255,.15) 25%,
-        transparent 26%
-    );
+    background: repeating-linear-gradient(90deg,
+            transparent 0,
+            transparent 24%,
+            rgba(255, 255, 255, .15) 25%,
+            transparent 26%);
 }
 
 @keyframes float {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(0);
     }
+
     50% {
         transform: translateY(-12px);
     }
@@ -213,10 +221,14 @@ html:lang(en) textarea {
     animation: float 6s ease-in-out infinite;
     animation-delay: 1s;
 }
+
 @keyframes heroFloat {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(0);
     }
+
     50% {
         transform: translateY(-14px);
     }
@@ -232,9 +244,12 @@ html:lang(en) textarea {
 }
 
 @keyframes globeMotion {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: rotateY(-12deg) rotateX(5deg);
     }
+
     50% {
         transform: rotateY(12deg) rotateX(-5deg);
     }
@@ -243,8 +258,11 @@ html:lang(en) textarea {
 .animate-globe {
     animation: globeMotion 8s ease-in-out infinite;
 }
+
 @keyframes showroomFloat {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(0) rotateX(0deg);
     }
 
@@ -257,12 +275,12 @@ html:lang(en) textarea {
     perspective: 1200px;
 }
 
-.showroom-scene > div:first-child {
+.showroom-scene>div:first-child {
     transform: rotateY(-4deg);
     transition: transform 0.5s ease;
 }
 
-.showroom-scene:hover > div:first-child {
+.showroom-scene:hover>div:first-child {
     transform: rotateY(0deg) translateY(-5px);
 }
 
@@ -276,6 +294,7 @@ html:lang(en) textarea {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
     .showroom-float,
     .showroom-float-delay {
         animation: none;
@@ -300,11 +319,9 @@ html:lang(en) textarea {
     overflow: hidden;
     isolation: isolate;
 
-    background: linear-gradient(
-        145deg,
-        #FFFFFF 0%,
-        #F5F7F1 100%
-    );
+    background: linear-gradient(145deg,
+            #FFFFFF 0%,
+            #F5F7F1 100%);
 
     border: 1px solid #E7EBE2;
     border-radius: 28px;
@@ -313,10 +330,10 @@ html:lang(en) textarea {
 
     box-shadow:
         0 12px 25px rgba(31, 57, 29, 0.05),
-        inset 0 1px 0 rgba(255,255,255,0.9);
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
 
     transition:
-        transform 0.55s cubic-bezier(.2,.8,.2,1),
+        transform 0.55s cubic-bezier(.2, .8, .2, 1),
         box-shadow 0.55s ease,
         border-color 0.4s ease;
 }
@@ -331,26 +348,22 @@ html:lang(en) textarea {
     width: 220px;
     height: 220px;
 
-    background: radial-gradient(
-        circle,
-        rgba(70,132,50,0.14),
-        transparent 70%
-    );
+    background: radial-gradient(circle,
+            rgba(70, 132, 50, 0.14),
+            transparent 70%);
 
     transition: transform .6s ease;
 }
 
 .service-card:hover .service-card-inner {
     transform:
-        rotateX(5deg)
-        rotateY(-5deg)
-        translateY(-10px);
+        rotateX(5deg) rotateY(-5deg) translateY(-10px);
 
-    border-color: rgba(70,132,50,0.35);
+    border-color: rgba(70, 132, 50, 0.35);
 
     box-shadow:
-        0 30px 55px rgba(31,57,29,0.13),
-        0 10px 20px rgba(70,132,50,0.08);
+        0 30px 55px rgba(31, 57, 29, 0.13),
+        0 10px 20px rgba(70, 132, 50, 0.08);
 }
 
 .service-card:hover .service-card-inner::before {
@@ -403,14 +416,14 @@ html:lang(en) textarea {
     justify-content: center;
     align-items: center;
 
-    background: linear-gradient(145deg,#5D9B48,#3C772D);
+    background: linear-gradient(145deg, #5D9B48, #3C772D);
     color: white;
 
     border-radius: 21px;
 
     box-shadow:
-        0 12px 20px rgba(70,132,50,.25),
-        inset 0 1px 2px rgba(255,255,255,.4);
+        0 12px 20px rgba(70, 132, 50, .25),
+        inset 0 1px 2px rgba(255, 255, 255, .4);
 
     transform: translateZ(35px);
     transition: transform .45s ease;
@@ -451,7 +464,6 @@ html:lang(en) textarea {
     bottom: 25px;
     right: 26px;
     left: 26px;
-
     display: flex;
     align-items: center;
     gap: 12px;
@@ -479,16 +491,13 @@ html:lang(en) textarea {
     z-index: -1;
     left: -55px;
     bottom: -85px;
-
     width: 180px;
     height: 180px;
-
-    border: 1px solid rgba(70,132,50,.12);
+    border: 1px solid rgba(70, 132, 50, .12);
     border-radius: 50%;
-
     box-shadow:
-        0 0 0 20px rgba(70,132,50,.025),
-        0 0 0 40px rgba(70,132,50,.02);
+        0 0 0 20px rgba(70, 132, 50, .025),
+        0 0 0 40px rgba(70, 132, 50, .02);
 
     transition: transform .6s ease;
 }
@@ -509,6 +518,7 @@ html:lang(en) textarea {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
     .service-card-inner,
     .service-icon,
     .service-arrow,
@@ -534,7 +544,7 @@ html:lang(en) textarea {
     border-radius: 27px;
     border: 1px solid #E5E9E0;
     background: linear-gradient(145deg, #fff, #F6F8F3);
-    box-shadow: 0 12px 28px rgba(40,65,35,.06);
+    box-shadow: 0 12px 28px rgba(40, 65, 35, .06);
     transform-style: preserve-3d;
     transition: transform .5s ease, box-shadow .5s ease;
 }
@@ -548,13 +558,13 @@ html:lang(en) textarea {
     top: -100px;
     left: -100px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(70,132,50,.16), transparent 70%);
+    background: radial-gradient(circle, rgba(70, 132, 50, .16), transparent 70%);
     transition: transform .5s ease;
 }
 
 .service-card:hover .service-card-inner {
     transform: rotateX(5deg) rotateY(-5deg) translateY(-10px);
-    box-shadow: 0 30px 55px rgba(30,60,25,.14);
+    box-shadow: 0 30px 55px rgba(30, 60, 25, .14);
 }
 
 .service-card:hover .service-card-inner::before {
@@ -589,7 +599,7 @@ html:lang(en) textarea {
     border-radius: 20px;
     color: white;
     background: linear-gradient(145deg, #68A653, #356C29);
-    box-shadow: 0 12px 22px rgba(70,132,50,.25);
+    box-shadow: 0 12px 22px rgba(70, 132, 50, .25);
     transform: translateZ(35px);
     transition: transform .4s ease;
 }
@@ -635,10 +645,10 @@ html:lang(en) textarea {
     left: -65px;
     width: 180px;
     height: 180px;
-    border: 1px solid rgba(70,132,50,.13);
+    border: 1px solid rgba(70, 132, 50, .13);
     border-radius: 50%;
-    box-shadow: 0 0 0 20px rgba(70,132,50,.025),
-                0 0 0 40px rgba(70,132,50,.02);
+    box-shadow: 0 0 0 20px rgba(70, 132, 50, .025),
+        0 0 0 40px rgba(70, 132, 50, .02);
 }
 
 @media (hover: none) {
@@ -648,6 +658,7 @@ html:lang(en) textarea {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
     .service-card-inner,
     .service-icon,
     .service-arrow {
@@ -662,7 +673,7 @@ html:lang(en) textarea {
 ========================================= */
 
 .zs-hero-new {
-   --color-primary: #468432;
+    --color-primary: #468432;
     --color-dark: #3D3D3D;
     --color-white: #FFFFFF;
 
@@ -673,11 +684,9 @@ html:lang(en) textarea {
     color: var(--color-white);
 
     background:
-        radial-gradient(
-            circle at 25% 45%,
+        radial-gradient(circle at 25% 45%,
             rgba(20, 75, 125, 0.35),
-            transparent 45%
-        ),
+            transparent 45%),
         var(--color-dark);
 }
 
@@ -690,16 +699,12 @@ html:lang(en) textarea {
     pointer-events: none;
 
     background:
-        radial-gradient(
-            circle at 75% 75%,
+        radial-gradient(circle at 75% 75%,
             rgba(217, 164, 65, 0.13),
-            transparent 35%
-        ),
-        radial-gradient(
-            circle at 20% 20%,
+            transparent 35%),
+        radial-gradient(circle at 20% 20%,
             rgba(70, 132, 50, 0.12),
-            transparent 30%
-        ),
+            transparent 30%),
         url('../images/iran-iraq-culture.png');
 
     background-size: cover;
@@ -758,7 +763,7 @@ html:lang(en) textarea {
 }
 
 .zs-hero-new__location-dot {
-     background: var(--color-primary);
+    background: var(--color-primary);
     box-shadow: 0 0 15px var(--color-primary);
 }
 
@@ -987,6 +992,7 @@ html:lang(en) textarea {
 /* Reduced motion */
 
 @media (prefers-reduced-motion: reduce) {
+
     .zs-hero-new__btn,
     .zs-hero-new__feature {
         transition: none;
@@ -1009,6 +1015,7 @@ html:lang(en) textarea {
     width: 100% !important;
     height: 100% !important;
 }
+
 #zs-hero-new-canvas {
     height: 100%;
 }
@@ -1020,16 +1027,12 @@ html:lang(en) textarea {
     pointer-events: none;
 
     background:
-        radial-gradient(
-            circle at 75% 75%,
+        radial-gradient(circle at 75% 75%,
             rgba(217, 164, 65, 0.05),
-            transparent 35%
-        ),
-        radial-gradient(
-            circle at 20% 20%,
+            transparent 35%),
+        radial-gradient(circle at 20% 20%,
             rgba(70, 132, 50, 0.04),
-            transparent 30%
-        ),
+            transparent 30%),
         url('../images/iran-iraq.png');
 
     background-size: cover;
@@ -1163,7 +1166,7 @@ html:lang(en) textarea {
 @media (max-width: 768px) {
     .about-location__images {
         grid-template-columns: 1fr;
-        
+
     }
 }
 
@@ -1341,11 +1344,9 @@ html:lang(en) textarea {
     position: relative;
     padding: 100px 0;
     background:
-        radial-gradient(
-            circle at 15% 20%,
+        radial-gradient(circle at 15% 20%,
             rgba(70, 132, 50, .12),
-            transparent 35%
-        ),
+            transparent 35%),
         linear-gradient(135deg, #f8faf6, #ffffff);
 }
 
@@ -1417,7 +1418,7 @@ html:lang(en) textarea {
     content: "";
     position: absolute;
     inset: 22px;
-    border: 1px solid rgba(255,255,255,.2);
+    border: 1px solid rgba(255, 255, 255, .2);
     border-radius: 50%;
 }
 
@@ -1426,7 +1427,7 @@ html:lang(en) textarea {
     position: absolute;
     width: 440px;
     height: 160px;
-    border: 1px solid rgba(70,132,50,.35);
+    border: 1px solid rgba(70, 132, 50, .35);
     border-radius: 50%;
     transform: rotate(-35deg);
 }
@@ -1461,7 +1462,7 @@ html:lang(en) textarea {
     text-align: center;
 }
 
-.careers-heading > span {
+.careers-heading>span {
     color: var(--careers-green);
     font-size: 13px;
     font-weight: 700;
@@ -1504,8 +1505,8 @@ html:lang(en) textarea {
 
 .careers-job:hover {
     transform: translateY(-7px);
-    border-color: rgba(70,132,50,.35);
-    box-shadow: 0 25px 60px rgba(0,0,0,.06);
+    border-color: rgba(70, 132, 50, .35);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, .06);
 }
 
 /* .careers-job__number {
@@ -1521,7 +1522,7 @@ html:lang(en) textarea {
     display: inline-block;
     padding: 7px 15px;
     border-radius: 30px;
-    background: rgba(70,132,50,.1);
+    background: rgba(70, 132, 50, .1);
     color: var(--careers-green);
     font-size: 12px;
     font-weight: 700;
@@ -1533,7 +1534,7 @@ html:lang(en) textarea {
     font-weight: 800;
 }
 
-.careers-job > p {
+.careers-job>p {
     color: #777;
     font-size: 14px;
     line-height: 2.2;
@@ -1602,7 +1603,7 @@ html:lang(en) textarea {
     background: #fff;
     border: 1px solid var(--careers-border);
     border-radius: 20px;
-    box-shadow: 0 20px 60px rgba(0,0,0,.035);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, .035);
 }
 
 .careers-form-heading {
@@ -1610,7 +1611,7 @@ html:lang(en) textarea {
     text-align: center;
 }
 
-.careers-form-heading > span {
+.careers-form-heading>span {
     color: var(--careers-green);
     font-size: 13px;
     font-weight: 700;
@@ -1683,7 +1684,7 @@ html:lang(en) textarea {
 .careers-field textarea:focus {
     outline: none;
     border-color: var(--careers-green);
-    box-shadow: 0 0 0 3px rgba(70,132,50,.08);
+    box-shadow: 0 0 0 3px rgba(70, 132, 50, .08);
 }
 
 .careers-field input[type="file"] {
@@ -1928,7 +1929,7 @@ html:lang(en) textarea {
 
 /* Our Process */
 .process-step {
-    
+
     opacity: 0;
     animation: processFadeUp 0.7s ease forwards;
     animation-delay: calc(var(--step-index) * 120ms);
@@ -2137,31 +2138,25 @@ html:lang(en) textarea {
     transition: transform 0.8s ease;
 }
 
-.zs-industry-card:hover
-.zs-industry-card__image img {
+.zs-industry-card:hover .zs-industry-card__image img {
     transform: scale(1.08);
 }
 
 .zs-industry-card__overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-        180deg,
-        rgb(20 30 15 / 5%) 0%,
-        rgb(20 30 15 / 35%) 40%,
-        rgb(20 30 15 / 90%) 100%
-    );
+    background: linear-gradient(180deg,
+            rgb(20 30 15 / 5%) 0%,
+            rgb(20 30 15 / 35%) 40%,
+            rgb(20 30 15 / 90%) 100%);
     transition: background 0.4s ease;
 }
 
-.zs-industry-card:hover
-.zs-industry-card__overlay {
-    background: linear-gradient(
-        180deg,
-        rgb(70 132 50 / 10%) 0%,
-        rgb(30 50 20 / 45%) 45%,
-        rgb(20 30 15 / 95%) 100%
-    );
+.zs-industry-card:hover .zs-industry-card__overlay {
+    background: linear-gradient(180deg,
+            rgb(70 132 50 / 10%) 0%,
+            rgb(30 50 20 / 45%) 45%,
+            rgb(20 30 15 / 95%) 100%);
 }
 
 .zs-industry-card__content {
@@ -2232,256 +2227,238 @@ html:lang(en) textarea {
 }
 
 
-/* ==============================
-   OUR PROCESS - ZAMAN SANI
-================================ */
+
+/* =========================
+   OUR PROCESS
+========================= */
 
 .our-process {
+    --process-green: #468432;
+    --process-dark: #3D3D3D;
+    --process-light: #f5f8f3;
+
+    padding: 100px 24px;
+    background: #fff;
     overflow: hidden;
 }
 
+.our-process__container {
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+.our-process__header {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 75px;
+}
+
+.our-process__eyebrow {
+    display: inline-block;
+    color: var(--process-green);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.our-process__header h2 {
+    color: var(--process-dark);
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 800;
+    margin: 0 0 18px;
+}
+
+.our-process__header p {
+    color: #777;
+    line-height: 2;
+    font-size: 16px;
+}
+
+/* Track */
+
 .process-track {
     position: relative;
-    padding: 30px 0 20px;
-    min-height: 390px;
+    height: 125px;
+    margin-bottom: 35px;
+    overflow: visible !important;
 }
 
-/* خط افقی مسیر */
-.process-line {
+.process-track__line,
+.process-track__progress {
     position: absolute;
-    top: 155px;
-    left: 4%;
-    right: 4%;
+    top: 68px;
+    right: 5%;
+    left: 5%;
     height: 4px;
-    background: #468432;
     border-radius: 20px;
-    transform-origin: left;
-    animation: line-grow 2s ease forwards;
 }
 
-/* ماشین شروع */
-.process-car {
+.process-track__line {
+    background: #e5e9e2;
+}
+
+.process-track__progress {
+    background: var(--process-green);
+    transform: scaleX(0);
+    transform-origin: right center;
+}
+
+/* Truck */
+
+.process-truck {
     position: absolute;
-    top: 105px;
-    left: 0;
-    z-index: 5;
-    font-size: 45px;
-    animation: car-drive 4s ease-in-out forwards;
+    z-index: 3;
+    top: 0;
+    right: 5%;
+    width: 150px;
+    height: 105px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    will-change: transform;
 }
 
-/* مراحل */
+.process-truck img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Steps */
+
 .process-steps {
     display: grid;
     grid-template-columns: repeat(5, minmax(0, 1fr));
-    position: relative;
-    z-index: 2;
-    gap: 15px;
+    gap: 22px;
 }
 
 .process-step {
-    text-align: center;
     position: relative;
-    padding-top: 25px;
-    opacity: 0;
-    animation: step-show 0.8s ease forwards;
+    padding: 28px 20px;
+    background: var(--process-light);
+    border: 1px solid #e9eee5;
+    border-radius: 18px;
+    text-align: center;
+    transition:
+        background .4s ease,
+        border-color .4s ease,
+        transform .4s ease,
+        box-shadow .4s ease;
 }
 
-/* نمایش تدریجی مراحل */
-.process-step:nth-child(1) { animation-delay: 1s; }
-.process-step:nth-child(2) { animation-delay: 1.5s; }
-.process-step:nth-child(3) { animation-delay: 2s; }
-.process-step:nth-child(4) { animation-delay: 2.5s; }
-.process-step:nth-child(5) { animation-delay: 3s; }
+.process-step__number {
+    display: block;
+    color: #b7c6ae;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
 
-/* آیکون مراحل */
-.process-icon {
-    width: 100px;
-    height: 100px;
-    margin: 0 auto 35px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #fff;
-    border: 3px solid #f1f1f1;
+.process-step__icon {
+    width: 48px;
+    height: 48px;
+    display: grid;
+    place-items: center;
+    margin: 0 auto 18px;
     border-radius: 50%;
-    font-size: 38px;
-    box-shadow: 0 8px 25px rgba(0,0,0,.08);
+    background: #e5eddf;
+    color: var(--process-green);
+    font-weight: 800;
+    font-size: 14px;
     transition: all .4s ease;
 }
 
-.process-step:hover .process-icon {
-    transform: translateY(-8px);
-    border-color: #468432;
-    box-shadow: 0 15px 30px rgba(70,132,50,.18);
-}
-
-/* شماره مراحل */
-.process-number {
-    position: absolute;
-    top: 130px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 42px;
-    height: 42px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #468432;
-    color: white;
-    border: 4px solid white;
-    border-radius: 50%;
-    font-weight: bold;
-    box-shadow: 0 4px 12px rgba(0,0,0,.15);
-}
-
-/* عنوان */
 .process-step h3 {
-    font-size: 18px;
+    color: var(--process-dark);
+    font-size: 17px;
     font-weight: 800;
-    color: #3D3D3D;
-    padding-top: 15px;
-    margin: 35px 0 12px;
+    margin: 0 0 12px;
 }
 
-/* توضیحات */
 .process-step p {
     color: #777;
-    font-size: 14px;
-    line-height: 1.9;
-    max-width: 190px;
-    margin: auto;
+    font-size: 13px;
+    line-height: 2;
+    margin: 0;
 }
 
-/* پرچم پایان */
-.process-finish {
-    position: absolute;
-    right: 0;
-    top: 100px;
-    font-size: 35px;
-    animation: finish-wave 1.5s ease-in-out infinite;
+/* Active step */
+
+.process-step.is-active {
+    background: #fff;
+    border-color: var(--process-green);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(70, 132, 50, .12);
 }
 
-/* انیمیشن‌ها */
-@keyframes line-grow {
-    from { transform: scaleX(0); }
-    to   { transform: scaleX(1); }
+.process-step.is-active .process-step__icon {
+    background: var(--process-green);
+    color: #fff;
 }
 
-@keyframes car-drive {
-    0%   { transform: translateX(-120px); opacity: 0; }
-    10%  { opacity: 1; }
-    100% { transform: translateX(350px); opacity: 1; }
+.process-step.is-active .process-step__number {
+    color: var(--process-green);
 }
 
-@keyframes step-show {
-    from {
-        opacity: 0;
-        transform: translateY(35px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+/* Mobile */
 
-@keyframes finish-wave {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
-}
-
-/* موبایل */
 @media (max-width: 768px) {
 
-    .process-track {
-        padding: 20px 0;
-        min-height: auto;
+    .our-process {
+        padding: 65px 18px;
     }
 
-    .process-line {
-        top: 0;
-        bottom: 0;
-        left: auto;
-        right: 35px;
-        width: 3px;
-        height: auto;
+    .our-process__header {
+        margin-bottom: 35px;
+    }
+
+    /* کامیون در موبایل مخفی نمی‌شود */
+    .process-track {
+        display: block;
+        height: 90px;
+        margin-bottom: 25px;
+    }
+
+    .process-track__line,
+    .process-track__progress {
+        top: 58px;
+        right: 10px;
+        left: 10px;
+    }
+
+    .process-truck {
+        width: 90px;
+        height: 75px;
+        right: 10px;
     }
 
     .process-steps {
         grid-template-columns: 1fr;
-        gap: 30px;
+        gap: 18px;
     }
 
     .process-step {
+        padding: 25px 20px;
         text-align: right;
-        padding: 0 95px 0 0;
-        min-height: 100px;
     }
 
-    .process-icon {
-        position: absolute;
-        right: 0;
-        top: 0;
-        width: 65px;
-        height: 65px;
-        font-size: 28px;
-        margin: 0;
+    .process-step__icon {
+        margin: 0 0 15px;
     }
 
-    .process-number {
-        right: 24px;
-        left: auto;
-        top: 75px;
-        transform: none;
-        width: 30px;
-        height: 30px;
-        font-size: 13px;
+    .process-step__number {
+        margin-bottom: 10px;
     }
 
-    .process-step h3 {
-        margin: 0 0 8px;
-        font-size: 17px;
-    }
-
-    .process-step p {
-        margin: 0;
-    }
-
-    .process-car {
-        display: none;
-    }
-
-    .process-finish {
-        display: none;
+    .process-step.is-active {
+        transform: translateX(-4px);
     }
 }
 
-.process-car {
-    width: 180px;
-    position: absolute;
-    top: 85px;
-    left: 0;
-    z-index: 10;
-    filter: drop-shadow(0 8px 8px rgba(70,132,50,.25));
-}
-
-.process-car-svg {
-    width: 100%;
-    overflow: visible;
-}
-
-.process-car-svg circle {
-    transform-box: fill-box;
-    transform-origin: center;
-}
-
-.process-car-svg circle:nth-of-type(1),
-.process-car-svg circle:nth-of-type(2) {
-    animation: wheel-spin 1s linear infinite;
-}
-
-@keyframes wheel-spin {
-    to {
-        transform: rotate(360deg);
+@media (prefers-reduced-motion: reduce) {
+    .process-step {
+        transition: none;
     }
 }
-
