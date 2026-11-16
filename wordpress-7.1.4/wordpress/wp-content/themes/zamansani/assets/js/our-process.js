@@ -1,217 +1,6 @@
-// document.addEventListener("DOMContentLoaded", () => {
-
-//     if (!window.gsap || !window.ScrollTrigger) {
-//         console.error("GSAP or ScrollTrigger is not loaded.");
-//         return;
-//     }
-//     gsap.registerPlugin(ScrollTrigger);
-//     const section = document.querySelector(".our-process");
-//     const truck = document.querySelector(".process-truck");
-//     const progressLine = document.querySelector(".process-track__progress");
-//     const track = document.querySelector(".process-track");
-//     const steps = gsap.utils.toArray(".process-step");
-
-//     if (!section || !truck || !track || !steps.length) {
-//         return;
-//     }
-
-//     let animation;
-
-//     function createAnimation() {
-
-//         if (animation) {
-//             animation.scrollTrigger?.kill();
-//             animation.kill();
-//         }
-
-//         const trackWidth = track.clientWidth;
-//         const truckWidth = truck.offsetWidth;
-
-//         // فاصله حرکت کامیون از راست به چپ
-//         const distance = trackWidth - truckWidth;
-
-//         animation = gsap.timeline({
-//             scrollTrigger: {
-//                 trigger: section,
-//                 start: "top 80%",
-//                 end: "bottom 30%",
-//                 scrub: 2 ,
-//                 invalidateOnRefresh: true
-//             }
-//         });
-
-//         animation.to(truck, {
-//             x: -distance,
-//             ease: "none"
-//         }, 0);
-
-//         animation.to(progressLine, {
-//             scaleX: 1,
-//             ease: "none"
-//         }, 0);
-
-//         animation.eventCallback("onUpdate", () => {
-
-//             const progress = animation.progress();
-
-//             steps.forEach((step, index) => {
-
-//                 const threshold = index / (steps.length - 1);
-
-//                 step.classList.toggle(
-//                     "is-active",
-//                     progress >= threshold
-//                 );
-
-//             });
-
-//         });
-
-//     }
-
-//     createAnimation();
-
-//     window.addEventListener("resize", () => {
-//         createAnimation();
-//         ScrollTrigger.refresh();
-//     });
-
-// });
-
-
-
-// document.addEventListener("DOMContentLoaded", () => {
-
-//     if (!window.gsap || !window.ScrollTrigger) {
-//         console.error("GSAP or ScrollTrigger is not loaded.");
-//         return;
-//     }
-
-//     gsap.registerPlugin(ScrollTrigger);
-
-//     const section = document.querySelector(".our-process");
-//     const truck = document.querySelector(".process-truck");
-//     const progressLine = document.querySelector(".process-track__progress");
-//     const track = document.querySelector(".process-track");
-//     const steps = gsap.utils.toArray(".process-step");
-
-//     if (!section || !truck || !track || !progressLine || !steps.length) {
-//         console.error("Our Process elements not found.");
-//         return;
-//     }
-
-//     let animation;
-
-//     function createAnimation() {
-
-//         // حذف انیمیشن قبلی
-//         if (animation) {
-//             animation.scrollTrigger?.kill();
-//             animation.kill();
-//         }
-
-//         // پاک کردن وضعیت قبلی
-//         steps.forEach(step => {
-//             step.classList.remove("is-active");
-//         });
-
-//         // تنظیم اولیه کامیون
-//         gsap.set(truck, {
-//             x: 0,
-//             opacity: 1,
-//             visibility: "visible"
-//         });
-
-//         gsap.set(progressLine, {
-//             scaleX: 0,
-//             transformOrigin: "right center"
-//         });
-
-//         // اندازه مسیر و کامیون
-//         const trackWidth = track.clientWidth;
-//         const truckWidth = truck.offsetWidth;
-
-//         // فاصله واقعی حرکت از ابتدا تا انتهای خط
-//         // const distance = Math.max(
-//         //     0,
-//         //     trackWidth * 0.90 - truckWidth
-//         // );
-//         const distance = trackWidth * 0.25;
-
-//         animation = gsap.timeline({
-//             scrollTrigger: {
-//                 trigger: section,
-//                 start: "top 80%",
-//                 end: "bottom 30%",
-//                 scrub: 3,
-//                 invalidateOnRefresh: true
-//             }
-//         });
-
-//         // حرکت کامیون
-//         // animation.to(truck, {
-//         //     x: -distance,
-//         //     ease: "none"
-//         // }, 0);
-//         animation.to(truck, {
-//             x: -distance,
-//             ease: "none"
-//         }, 0);
-
-//         // تکمیل خط مسیر
-//         animation.to(progressLine, {
-//             scaleX: 1,
-//             ease: "none"
-//         }, 0);
-
-//         // هماهنگی فعال شدن مراحل با حرکت کامیون
-//         animation.eventCallback("onUpdate", () => {
-
-//             const progress = animation.progress();
-
-//             steps.forEach((step, index) => {
-
-//                 const threshold =
-//                     index / (steps.length - 1);
-
-//                 step.classList.toggle(
-//                     "is-active",
-//                     progress >= threshold
-//                 );
-
-//             });
-
-//         });
-
-//     }
-
-//     // اجرای اولیه
-//     createAnimation();
-
-//     // اصلاح اندازه در تغییر ابعاد صفحه
-//     let resizeTimer;
-
-//     window.addEventListener("resize", () => {
-
-//         clearTimeout(resizeTimer);
-
-//         resizeTimer = setTimeout(() => {
-//             createAnimation();
-//             ScrollTrigger.refresh();
-//         }, 200);
-
-//     });
-
-// });
-
-
-
 document.addEventListener("DOMContentLoaded", () => {
 
-    if (!window.gsap || !window.ScrollTrigger) {
-        console.error("GSAP or ScrollTrigger is not loaded.");
-        return;
-    }
+    if (!window.gsap || !window.ScrollTrigger) return;
 
     gsap.registerPlugin(ScrollTrigger);
 
@@ -219,10 +8,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const track = document.querySelector(".process-track");
     const truck = document.querySelector(".process-truck");
     const progressLine = document.querySelector(".process-track__progress");
+    const line = document.querySelector(".process-track__line");
     const steps = gsap.utils.toArray(".process-step");
 
-    if (!section || !track || !truck || !progressLine || !steps.length) {
-        console.error("Our Process elements not found.");
+    if (!section || !track || !truck || !line || !progressLine || steps.length !== 5) {
+        console.error("Our Process: elements missing");
         return;
     }
 
@@ -231,39 +21,53 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function createAnimation() {
 
-        // حذف انیمیشن قبلی
         if (animation) {
             animation.scrollTrigger?.kill();
             animation.kill();
         }
 
         const trackRect = track.getBoundingClientRect();
+        const lineStyle = getComputedStyle(line);
+
+        const rightInset = parseFloat(lineStyle.right);
+        const leftInset = parseFloat(lineStyle.left);
         const truckWidth = truck.offsetWidth;
 
-        // مرکز واقعی مراحل نسبت به مسیر
-        const stepCenters = steps.map(step => {
-            const rect = step.getBoundingClientRect();
+        const minCenter = leftInset + truckWidth / 2;
+        const maxCenter = track.clientWidth - rightInset - truckWidth / 2;
 
-            return rect.left + rect.width / 2 - trackRect.left;
-        });
+        let startCenter;
+        let endCenter;
 
-        // مرحله اول و پنجم
-        const startCenter = stepCenters[0];
-        const endCenter = stepCenters[steps.length - 1];
+        if (window.innerWidth > 768) {
 
-        // موقعیت شروع و پایان کامیون
-        const startX = startCenter - truckWidth / 2;
-        const endX = endCenter - truckWidth / 2;
+            // مرکز کارت اول و پنجم
+            const firstRect = steps[0].getBoundingClientRect();
+            const lastRect = steps[4].getBoundingClientRect();
 
-        const distance = endX - startX;
+            startCenter = firstRect.left + firstRect.width / 2 - trackRect.left;
+            endCenter = lastRect.left + lastRect.width / 2 - trackRect.left;
 
-        // تعیین محل واقعی کامیون
+            // جلوگیری از خروج کامیون از مسیر
+            startCenter = Math.max(minCenter, Math.min(maxCenter, startCenter));
+            endCenter = Math.max(minCenter, Math.min(maxCenter, endCenter));
+
+        } else {
+
+            // موبایل: حرکت روی مسیر افقی
+            startCenter = maxCenter;
+            endCenter = minCenter;
+
+        }
+
+        const startLeft = startCenter - truckWidth / 2;
+        const distance = endCenter - startCenter;
+
         gsap.set(truck, {
-            left: startX,
+            left: startLeft,
             right: "auto",
             x: 0,
-            opacity: 1,
-            visibility: "visible"
+            autoAlpha: 1
         });
 
         gsap.set(progressLine, {
@@ -271,42 +75,35 @@ document.addEventListener("DOMContentLoaded", () => {
             transformOrigin: "right center"
         });
 
-        steps.forEach(step => {
-            step.classList.remove("is-active");
-        });
+        steps.forEach(step => step.classList.remove("is-active"));
 
         animation = gsap.timeline({
             scrollTrigger: {
                 trigger: section,
                 start: "top 80%",
                 end: "bottom 30%",
-                scrub: 3,
+                scrub: 1,
                 invalidateOnRefresh: true
             }
         });
 
-        // حرکت واقعی کامیون از مرحله اول تا پنجم
         animation.to(truck, {
             x: distance,
             ease: "none"
         }, 0);
 
-        // حرکت خط مسیر
         animation.to(progressLine, {
             scaleX: 1,
             ease: "none"
         }, 0);
 
-        // هماهنگی مراحل با موقعیت کامیون
         animation.eventCallback("onUpdate", () => {
 
             const progress = animation.progress();
 
             steps.forEach((step, index) => {
 
-                const threshold =
-                    (startCenter - stepCenters[index]) /
-                    (startCenter - endCenter);
+                const threshold = index / 4;
 
                 step.classList.toggle(
                     "is-active",
@@ -319,10 +116,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
-    // اجرای اولیه
     createAnimation();
 
-    // تنظیم مجدد در تغییر اندازه
     window.addEventListener("resize", () => {
 
         clearTimeout(resizeTimer);
@@ -330,9 +125,8 @@ document.addEventListener("DOMContentLoaded", () => {
         resizeTimer = setTimeout(() => {
             createAnimation();
             ScrollTrigger.refresh();
-        }, 250);
+        }, 300);
 
     });
 
 });
-

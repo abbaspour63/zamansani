@@ -252,9 +252,6 @@
   .invisible {
     visibility: hidden;
   }
-  .visible {
-    visibility: visible;
-  }
   .absolute {
     position: absolute;
   }
@@ -3692,10 +3689,13 @@ html:lang(en) input, html:lang(en) textarea {
   font-size: 16px;
 }
 .process-track {
-  position: relative;
+  position: sticky;
+  top: 75px;
+  z-index: 10;
   height: 125px;
   margin-bottom: 35px;
-  overflow: visible !important;
+  overflow: visible;
+  background: #fff;
 }
 .process-track__line, .process-track__progress {
   position: absolute;
