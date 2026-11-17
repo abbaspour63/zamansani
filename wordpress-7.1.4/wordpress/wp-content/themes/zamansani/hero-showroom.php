@@ -19,7 +19,6 @@
                     ZAMAN SANI SHOWROOM
 
                 </div>
-
                 <h1 class="mt-7 text-4xl md:text-5xl xl:text-6xl
                     font-black leading-[1.7] text-[#3D3D3D]">
 
@@ -27,7 +26,6 @@
                     <span class="text-[#468432]">
                         از قلب بصره
                     </span>
-
                 </h1>
 
                 <p class="mt-6 text-lg leading-9 text-gray-600 max-w-xl">
