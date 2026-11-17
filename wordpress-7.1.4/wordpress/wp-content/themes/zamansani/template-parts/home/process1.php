@@ -1,5 +1,5 @@
-
 <?php
+
 /**
  * Our Process - ZamanSani
  */
@@ -7,7 +7,7 @@
 
 <section class="our-process" id="our-process" dir="rtl">
 
-    <!-- <div class="our-process__container">
+    <div class="our-process__container">
 
         <header class="our-process__header">
             <span class="our-process__eyebrow"></span>
@@ -16,20 +16,26 @@
                 از مشاوره اولیه تا استقرار محصولات شما در شوروم عراق،
                 در پنج مرحله همراه شما هستیم.
             </p>
-        </header> -->
+        </header>
 
-        <!-- مسیر حرکت کامیون -->
+        <!-- process track  -->
         <div class="process-track">
 
             <div class="process-track__line"></div>
 
             <div class="process-track__progress"></div>
+            <div class="process-track__city process-track__city--start">
+                <span>شیراز</span>
+            </div>
+
+            <div class="process-track__city process-track__city--end">
+                <span>بصره</span>
+            </div>
 
             <div class="process-truck" aria-label="کامیون زمان ثانی">
                 <img
                     src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/process-truck.webp'); ?>"
-                    alt="کامیون سه بعدی زمان ثانی"
-                >
+                    alt="کامیون سه بعدی زمان ثانی">
             </div>
 
         </div>

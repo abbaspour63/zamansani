@@ -3682,6 +3682,7 @@ html:lang(en) input, html:lang(en) textarea {
   font-size: clamp(28px, 4vw, 42px);
   font-weight: 800;
   margin: 0 0 18px;
+  color: rgb(5, 90, 5);
 }
 .our-process__header p {
   color: #777;
@@ -3738,7 +3739,8 @@ html:lang(en) input, html:lang(en) textarea {
 }
 .process-step {
   position: relative;
-  padding: 28px 20px;
+  margin-top: 40px;
+  padding: 20px 20px;
   background: var(--process-light);
   border: 1px solid #e9eee5;
   border-radius: 18px;
@@ -3817,7 +3819,7 @@ html:lang(en) input, html:lang(en) textarea {
     gap: 18px;
   }
   .process-step {
-    padding: 25px 20px;
+    padding: 35px 20px;
     text-align: right;
   }
   .process-step__icon {
@@ -3833,6 +3835,45 @@ html:lang(en) input, html:lang(en) textarea {
 @media (prefers-reduced-motion: reduce) {
   .process-step {
     transition: none;
+  }
+}
+.process-track__city {
+  position: absolute;
+  top: 82px;
+  z-index: 5;
+  color: var(--process-dark);
+  font-size: 14px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+.process-track__city--start {
+  right: 5%;
+  transform: translateX(50%);
+}
+.process-track__city--end {
+  left: 5%;
+  transform: translateX(-50%);
+}
+.process-track__city span {
+  display: inline-block;
+  padding: 5px 14px;
+  background: #f5f8f3;
+  border-radius: 20px;
+  border: 1px solid #e5e9e2;
+}
+@media (max-width: 768px) {
+  .process-track {
+    height: 110px;
+  }
+  .process-track__city {
+    top: 75px;
+    font-size: 12px;
+  }
+  .process-track__city--start {
+    right: 10px;
+  }
+  .process-track__city--end {
+    left: 10px;
   }
 }
 @property --tw-translate-x {

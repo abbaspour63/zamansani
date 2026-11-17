@@ -74,7 +74,7 @@
     </div>
 
     <!-- Main Header -->
-    <header class="bg-white shadow-sm sticky top-0 z-50">
+    <header class=" bg-white shadow-sm sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-6 py-4">
 
             <div dir="rtl" class="flex items-center justify-between gap-8">

@@ -51,7 +51,7 @@ $faqs = [
                 پرسش های
                 <span class="text-[#468432]">پرتکرار</span>
             </h2>
-و
+            
             <p class="mx-auto max-w-2xl text-base leading-9 text-gray-500">
                 پاسخ پرسش‌های رایج درباره خدمات زمان ثانی،
                 پذیرش محصولات و همکاری با شوروم.
