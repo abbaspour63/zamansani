@@ -1,9 +1,14 @@
 <?php
 
+if (!defined('ABSPATH')) {
+    exit;
+}
+
 /**
  * Our Process - ZamanSani
  */
 ?>
+
 
 <section class="our-process" id="our-process" dir="rtl">
 

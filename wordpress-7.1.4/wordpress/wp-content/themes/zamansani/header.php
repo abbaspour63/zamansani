@@ -144,14 +144,25 @@
                                     class="block px-4 py-3 rounded-lg hover:bg-green-50 hover:text-[#468432]">
                                     تحقیقات بازار در عراق
                                 </a>
-
-
                             </div>
                         </div>
                     </div>
 
                     <!-- Portfolio Dropdown -->
-                    <div class="relative group">
+                
+                    <a href="<?php echo esc_url(home_url('/')); ?>"
+                        class="hover:text-[#468432] transition">
+                       تعرفه
+                    </a>
+                     <a href="<?php echo esc_url(home_url('/')); ?>"
+                        class="hover:text-[#468432] transition">
+                           رویدادها
+                    </a>
+                     <a href="<?php echo esc_url(home_url('/')); ?>"
+                        class="hover:text-[#468432] transition">
+                          وبلاگ
+                    </a>
+                        <div class="relative group">
 
                         <button type="button"
                             class="flex items-center gap-1 hover:text-[#468432] transition">
@@ -188,11 +199,6 @@
                             </div>
                         </div>
                     </div>
-                    <a href="<?php echo esc_url(home_url('/')); ?>"
-                        class="hover:text-[#468432] transition">
-                       تعرفه
-                    </a>
-
                 </nav>
                 <button
                     id="mobile-menu-button"

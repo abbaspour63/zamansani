@@ -1,5 +1,8 @@
 
 <?php
+if (!defined('ABSPATH')) {
+    exit;
+}
 $industries = [
     [
         'title' => 'مواد غذایی و نوشیدنی',
