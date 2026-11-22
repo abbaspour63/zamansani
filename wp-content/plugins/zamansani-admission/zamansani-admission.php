@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Plugin Name: ZamanSani Admission
  * Description: Admission and showroom management system for ZamanSani.
@@ -27,4 +28,10 @@ $autoload = ZS_ADMISSION_PATH . 'vendor/autoload.php';
 
 if (file_exists($autoload)) {
     require_once $autoload;
+    add_action('plugins_loaded', function () {
+
+        $plugin = new \ZamanSani\Admission\Core\Bootstrap\Plugin();
+
+        $plugin->run();
+    });
 }
