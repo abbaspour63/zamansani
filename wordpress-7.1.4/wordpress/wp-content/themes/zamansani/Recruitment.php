@@ -16,7 +16,6 @@ $career_status = sanitize_key(
 
     <div class="mb-6 rounded-xl border border-green-200 bg-green-50 p-5 text-green-800">
         درخواست شما با موفقیت ارسال شد.
-        از علاقه شما به همکاری با زمان ثانی سپاسگزاریم.
     </div>
 
 <?php elseif ($career_status === 'saved') : ?>

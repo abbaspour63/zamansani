@@ -120,7 +120,7 @@
 
                             <div class="bg-white rounded-xl shadow-xl border border-gray-100 p-2">
 
-                                <a href="<?php echo esc_url(home_url('/services/')); ?>"
+                                <a href="<?php echo esc_url(home_url('/development-market/')); ?>"
                                     class="block px-4 py-3 rounded-lg hover:bg-green-50 hover:text-[#227208]">
                                     توسعه بازار در کشور عراق
                                 </a>
@@ -135,7 +135,7 @@
                                     بازاریابی تلفنی در عراق
                                 </a>
 
-                                <a href="<?php echo esc_url(home_url('/services/seo/')); ?>"
+                                <a href="<?php echo esc_url(home_url('')); ?>"
                                     class="block px-4 py-3 rounded-lg hover:bg-green-50 hover:text-[#468432]">
                                     دیجیتال مارکتینگ در عراق
                                 </a>

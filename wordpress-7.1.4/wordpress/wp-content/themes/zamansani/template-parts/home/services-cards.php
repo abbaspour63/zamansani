@@ -1,4 +1,5 @@
 <?php
+
 /**
  * ZamanSani Services Cards
  */
@@ -18,15 +19,16 @@ $services = [
         'title' => 'شوروم بصره',
         'description' => 'کمک به ورود، معرفی و گسترش محصولات شما در بازار عراق.',
     ],
-    [
-        'number' => '',
-        'title' =>'بازاریابی تلفنی در عراق',
-        'description' => 'معرفی و نمایش حرفه‌ای محصولات در فضای نمایشگاهی زمان ثانی.',
-    ],
+    
     [
         'number' => '',
         'title' => 'دیجیتال مارکتینگ در عراق',
         'description' => 'طراحی و اجرای راهکارهای بازاریابی برای افزایش شناخت برند شما.',
+    ],
+     [
+        'number' => '',
+        'title' => 'بازاریابی تلفنی در عراق',
+        'description' => 'معرفی و نمایش حرفه‌ای محصولات در فضای نمایشگاهی زمان ثانی.',
     ],
     [
         'number' => '',
@@ -41,51 +43,107 @@ $services = [
 ];
 ?>
 
-
-    
- <section class="zs-services pt-12 md:pt-16">
+<section class="zs-services pt-12 md:pt-16">
     <div class="zs-services-grid">
 
-    <?php foreach ($services as $index => $service) : ?>
+        <?php foreach ($services as $index => $service) : ?>
 
-        <article class="zs-service-card">
+            <article class="zs-service-card">
 
-            <?php if ($index === 0) : ?>
-                <div class="zs-service-card__art">
-                    <img
-                        src="<?php echo esc_url(
-                            get_template_directory_uri() .
-                            '/assets/images/cards/basra-line-art.webp'
-                        ); ?>"
-                        alt="<?php echo esc_attr($service['title']); ?>"
-                        loading="lazy"
-                    >
+                <?php if ($index === 0) : ?>
+                    <div class="zs-service-card__art">
+                        <img
+                            src="<?php echo esc_url(
+                                        get_template_directory_uri() .
+                                            '/assets/images/cards/basra-line-art.webp'
+                                    ); ?>"
+                            alt="<?php echo esc_attr($service['title']); ?>"
+                            loading="lazy">
+                    </div>
+                <?php endif; ?>
+
+                <?php if ($index === 1) : ?>
+                    <div class="zs-service-card__art">
+                        <img
+                            src="<?php echo esc_url(
+                                        get_template_directory_uri() .
+                                            '/assets/images/cards/showroom-basre.webp'
+                                    ); ?>"
+                            alt="<?php echo esc_attr($service['title']); ?>"
+                            loading="lazy">
+                    </div>
+                <?php endif; ?>
+                <?php if ($index === 2) : ?>
+                    <div class="zs-service-card__art">
+                        <img
+                            src="<?php echo esc_url(
+                                        get_template_directory_uri() .
+                                            '/assets/images/cards/digital-marketing.png'
+                                    ); ?>"
+                            alt="<?php echo esc_attr($service['title']); ?>"
+                            loading="lazy">
+                    </div>
+                <?php endif; ?>
+                
+                <?php if ($index === 3) : ?>
+                    <div class="zs-service-card__art">
+                        <img
+                            src="<?php echo esc_url(
+                                        get_template_directory_uri() .
+                                            '/assets/images/cards/telephone.png'
+                                    ); ?>"
+                            alt="<?php echo esc_attr($service['title']); ?>"
+                            loading="lazy">
+                    </div>
+                <?php endif; ?>
+                 <?php if ($index === 4) : ?>
+                    <div class="zs-service-card__art">
+                        <img
+                            src="<?php echo esc_url(
+                                        get_template_directory_uri() .
+                                            '/assets/images/cards/reserch-iraq.png'
+                                    ); ?>"
+                            alt="<?php echo esc_attr($service['title']); ?>"
+                            loading="lazy">
+                    </div>
+                <?php endif; ?>
+
+                  <?php if ($index === 5) : ?>
+                    <div class="zs-service-card__art">
+                        <img
+                            src="<?php echo esc_url(
+                                        get_template_directory_uri() .
+                                            '/assets/images/cards/export.png'
+                                    ); ?>"
+                            alt="<?php echo esc_attr($service['title']); ?>"
+                            loading="lazy">
+                    </div>
+                <?php endif; ?>
+
+                <div class="zs-service-card__content">
+
+                    <h3>
+                        <?php echo esc_html($service['title']); ?>
+                    </h3>
+
+                    <p>
+                        <?php echo esc_html($service['description']); ?>
+                    </p>
+
+                    <a href="#contact"
+                        class="zs-service-card__link">
+                        اطلاعات بیشتر
+                        <span aria-hidden="true">←</span>
+                    </a>
+
                 </div>
-            <?php endif; ?>
 
-            <div class="zs-service-card__content">
-
-                <h3>
-                    <?php echo esc_html($service['title']); ?>
-                </h3>
-
-                <p>
-                    <?php echo esc_html($service['description']); ?>
-                </p>
-
-                <a href="#contact"
-                   class="zs-service-card__link">
-                    اطلاعات بیشتر
-                    <span aria-hidden="true">←</span>
-                </a>
-
-            </div>
-
-        </article>
-
-    <?php endforeach; ?>
-
-</div>
+            </article>
 
 
- </section>
+
+        <?php endforeach; ?>
+
+    </div>
+
+</section>

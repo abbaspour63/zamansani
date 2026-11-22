@@ -398,8 +398,8 @@ html:lang(en) textarea {
     background: #F0F3EC;
     color: #468432;
 
-    transition: all .35s ease;
 }
+transition: all .35s ease;
 
 .service-card:hover .service-arrow {
     background: #468432;
@@ -411,11 +411,9 @@ html:lang(en) textarea {
     width: 68px;
     height: 68px;
     margin-top: 28px;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
     background: linear-gradient(145deg, #5D9B48, #3C772D);
     color: white;
 
@@ -1826,7 +1824,7 @@ html:lang(en) textarea {
     overflow: hidden;
     border: 1px solid #2c5014;
     border-radius: 18px;
-    background: white;
+    background: #468432;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -1840,7 +1838,7 @@ html:lang(en) textarea {
     align-items: center;
     gap: 18px;
     padding: 24px;
-    color: #3D3D3D;
+    color: #ffffff;
     font-size: 16px;
     font-weight: 700;
     line-height: 2;
@@ -1892,7 +1890,7 @@ html:lang(en) textarea {
 }
 
 .zs-faq__answer p {
-    color: #6b7280;
+    color: #ffffff;
     font-size: 14px;
     line-height: 2.4;
 }

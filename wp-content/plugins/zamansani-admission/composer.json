@@ -1,0 +1,14 @@
+{
+    "name": "zamansani/admission",
+    "description": "ZamanSani Admission and Showroom Management Plugin",
+    "type": "wordpress-plugin",
+    "license": "proprietary",
+    "require": {
+        "php": "^8.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "ZamanSani\\Admission\\": "src/"
+        }
+    }
+}
