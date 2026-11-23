@@ -18,20 +18,17 @@ define(
     'ZS_ADMISSION_PATH',
     plugin_dir_path(__FILE__)
 );
-
 define(
     'ZS_ADMISSION_URL',
     plugin_dir_url(__FILE__)
 );
-
 $autoload = ZS_ADMISSION_PATH . 'vendor/autoload.php';
 
 if (file_exists($autoload)) {
     require_once $autoload;
     add_action('plugins_loaded', function () {
-
         $plugin = new \ZamanSani\Admission\Core\Bootstrap\Plugin();
-
         $plugin->run();
+
     });
 }

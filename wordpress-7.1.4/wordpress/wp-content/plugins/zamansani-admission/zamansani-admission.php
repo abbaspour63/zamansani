@@ -1,3 +1,4 @@
+-- Active: 1795345739916@@127.0.0.1@3306@zamansani
 <?php
 /**
  * Plugin Name: ZamanSani Admission
@@ -28,3 +29,4 @@ $autoload = ZS_ADMISSION_PATH . 'vendor/autoload.php';
 if (file_exists($autoload)) {
     require_once $autoload;
 }
+
