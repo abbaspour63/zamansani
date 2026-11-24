@@ -1,5 +1,4 @@
 <?php
-
 namespace ZamanSani\Admission\Core\Container;
 defined('ABSPATH') || exit;
 
@@ -9,24 +8,39 @@ final class Container
 
     private array $instances = [];
 
+    /**
+     * Register a transient binding.
+     */
     public function bind(
         string $abstract,
         callable|string $concrete
     ): void {
-        $this->bindings[$abstract] = $concrete;
+        $this->bindings[$abstract] = [
+            'concrete' => $concrete,
+            'shared'  => false,
+        ];
+
         unset($this->instances[$abstract]);
-        
     }
 
+    /**
+     * Register a singleton binding.
+     */
     public function singleton(
         string $abstract,
         callable|string $concrete
     ): void {
-        $this->bindings[$abstract] = $concrete;
+        $this->bindings[$abstract] = [
+            'concrete' => $concrete,
+            'shared'  => true,
+        ];
 
         unset($this->instances[$abstract]);
     }
 
+    /**
+     * Register an existing object.
+     */
     public function instance(
         string $abstract,
         object $instance
@@ -34,14 +48,19 @@ final class Container
         $this->instances[$abstract] = $instance;
     }
 
+    /**
+     * Check whether a service exists.
+     */
     public function has(string $abstract): bool
     {
         return array_key_exists($abstract, $this->bindings)
             || array_key_exists($abstract, $this->instances);
     }
 
+    /**
+     * Resolve a service.
+     */
     public function get(string $abstract): mixed
-
     {
         if (array_key_exists($abstract, $this->instances)) {
             return $this->instances[$abstract];
@@ -53,15 +72,14 @@ final class Container
             );
         }
 
-        $concrete = $this->bindings[$abstract];
+        $binding = $this->bindings[$abstract];
+        $concrete = $binding['concrete'];
 
         $object = is_callable($concrete)
             ? $concrete($this)
             : new $concrete();
 
-        if (is_string($this->bindings[$abstract])) {
-            // Ordinary bindings are not shared.
-        } else {
+        if ($binding['shared']) {
             $this->instances[$abstract] = $object;
         }
 
