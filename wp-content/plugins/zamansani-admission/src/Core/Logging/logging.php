@@ -1,7 +1,5 @@
 <?php
-
 namespace ZamanSani\Admission\Core\Logging;
-
 defined('ABSPATH') || exit;
 
 final class Logger
@@ -15,6 +13,7 @@ final class Logger
     {
         error_log('[ZamanSani Admission] ERROR: ' . $message);
     }
+
 
     public function warning(string $message): void
     {
