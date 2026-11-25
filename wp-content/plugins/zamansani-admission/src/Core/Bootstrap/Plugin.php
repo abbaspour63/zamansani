@@ -21,6 +21,7 @@ final class Plugin
     {
         $this->providers[] = $provider;
     }
+    
 
     public function run(): void
     {

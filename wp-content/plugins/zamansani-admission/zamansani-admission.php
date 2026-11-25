@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Plugin Name: ZamanSani Admission
  * Description: Admission and showroom management system for ZamanSani.
@@ -8,21 +7,12 @@
  * Text Domain: zamansani-admission
  */
 
-if (!defined('ABSPATH')) {
-    exit;
-}
+defined('ABSPATH') || exit;
 
 define('ZS_ADMISSION_VERSION', '1.0.0');
 
-define(
-    'ZS_ADMISSION_PATH',
-    plugin_dir_path(__FILE__)
-);
-
-define(
-    'ZS_ADMISSION_URL',
-    plugin_dir_url(__FILE__)
-);
+define('ZS_ADMISSION_PATH', plugin_dir_path(__FILE__));
+define('ZS_ADMISSION_URL', plugin_dir_url(__FILE__));
 
 $autoload = ZS_ADMISSION_PATH . 'vendor/autoload.php';
 
@@ -40,6 +30,12 @@ add_action('plugins_loaded', function () {
         $container
     );
 
+    // Register Core Provider.
+    $plugin->addProvider(
+        new \ZamanSani\Admission\Core\Providers\CoreServiceProvider()
+    );
+
+    // Run the plugin.
     $plugin->run();
 
 });

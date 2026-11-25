@@ -1,13 +1,14 @@
 <?php
 namespace ZamanSani\Admission\Core\Container;
+
 defined('ABSPATH') || exit;
 
 final class Container
 {
     private array $bindings = [];
-
+    
     private array $instances = [];
-
+    
     /**
      * Register a transient binding.
      */
@@ -22,7 +23,7 @@ final class Container
 
         unset($this->instances[$abstract]);
     }
-
+    
     /**
      * Register a singleton binding.
      */
@@ -86,3 +87,4 @@ final class Container
         return $object;
     }
 }
+

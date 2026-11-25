@@ -1,5 +1,4 @@
 <?php
-
 namespace ZamanSani\Admission\Services;
 
 use ZamanSani\Admission\Core\Logging\Logger;
@@ -19,5 +18,6 @@ final class AdmissionService
     {
         $this->logger->info('Admission process started.');
     }
+
 }
 
