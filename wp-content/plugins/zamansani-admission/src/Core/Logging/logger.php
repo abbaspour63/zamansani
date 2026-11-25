@@ -24,11 +24,11 @@ final class Logger
 
     public function error(string $message): void
     {
-        $this->write('ERROR', $message);
+        $this->write('ERROR', $message);   
     }
 
     private function write(string $level, string $message): void
-
+      
     {
         $directory = dirname($this->logFile);
 
